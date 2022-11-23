@@ -29,6 +29,8 @@ header{
 	align-items: center;
 	justify-content: space-between;
 	background: transparent;
+	backdrop-filter: blur(5px);
+  	background-color: rgba(255, 255, 255, .15);
 	padding: 28px 12%;
 	transition: all .50s ease;
 }
@@ -96,7 +98,7 @@ header{
     font-size: 16px;
     font-family: 'Poppins';
     font-weight: 200;
-    border-radius: 5px 0px 5px 0px;
+    border-radius: 5px 0px 0px 5px;
     margin-left: 40px;
 }
 
@@ -126,15 +128,22 @@ header{
     cursor: pointer;
     border-radius: 5px;
     background: #EAE9F6;
-    margin-left: 20px;
-    color: #5A4FCF;
+	margin-left: 20px;
+}
+
+.login a {
+	margin-left: 20px;
+	color: #5A4FCF;
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
 }
 
 .login:hover {
-    background: #5A4FCF;
+    background: #5A4FCF;	
+}
+
+.login a:hover {
     color: #ffffff;
 }
 
@@ -239,4 +248,258 @@ header{
 
 .slider-nav a:hover {
     opacity: 1;
+}
+
+.detailSapta {
+	display: flex;
+	width: 50%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+}
+
+.cekKantin {
+	top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #FDC886;
+	margin-left: 20px;
+}
+
+.cekKantin a {
+	color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.alasanMakanDiSapta {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 10px;
+	width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+}
+
+.hero1 {
+	width: 100%;
+	background-color: #fafafa;
+	padding-bottom: 20px;
+}
+
+.bbrpAlasanKnpKamuHarusMakanDiSapta {
+	width: 100%;
+	margin-bottom: 40px;
+	padding-top: 40px;
+}
+
+.bbrpAlasan {
+	display: flex;
+	justify-content: center;
+	color: #5A4FCF;
+	font-size: 16px;
+}
+
+.kmHarusMakan {
+	display: flex;
+	justify-content: center;
+	font-size: 28px;
+	color: #000000;
+}
+
+.murah {
+	border-radius: 24px;
+}
+
+.murah img {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 24px;
+}
+
+.murah h4 {
+	font-size: 18px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 12px;
+}
+
+.murah p {
+	margin: 0 auto;
+	color: #656565;
+}
+
+.lihatDetailAktif {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 54px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 12px 12px 24px 24px;
+    background: #FDC886;
+}
+
+.lihatDetailAktif p{
+	color: #000000;
+	font-weight: 600;
+}
+
+.higenis {
+	border-radius: 24px;
+}
+
+.higenis img {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 24px;
+}
+
+.higenis h4 {
+	font-size: 18px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 12px;
+}
+
+.gaAdaPajak {
+	border-radius: 24px;
+}
+
+.gaAdaPajak img {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 24px;
+}
+
+.gaAdaPajak h4 {
+	font-size: 18px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 12px;
+}
+
+.bersih {
+	border-radius: 24px;
+}
+
+.bersih img {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 24px;
+}
+
+.bersih h4 {
+	font-size: 18px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 12px;
+}
+
+.kantinPalingLaris {
+	font-family: 'Poppins', sans-serif;
+	margin: 40px;
+	display: flex;
+}
+
+.teks {
+	width: 40%;
+}	
+
+.teks h4 {
+	color: #5A4FCF;
+	font-size: 16px;
+}
+
+.teks h3 {
+	color: #000000;
+	font-size: 28px;
+}
+
+.teks p {
+	color: #656565;
+	font-size: 16px;
+}
+
+.carousel {
+	display: flex;
+}
+
+.cont {
+	display: list-item;
+	width: 352px;
+	height: 131px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+}
+
+.starRating {
+	padding-bottom: 8px;
+	color: #FFB800;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.jumlahRating {
+	color: #656565;
+	font-size: 16px;
+}
+
+.judulMakanan {
+	font-weight: 700;
+	color: #000000;
+	font-size: 18px;
+}
+
+.lokasiMakanan {
+	color: #656565;
+}
+
+.lokasiMakanan span {
+	margin-left: 8px;
+	font-size: 16px;
+}
+
+.panahKanan {
+	float: right;
+	margin-right: 40px;
+}
+
+.content {
+	align-items: center;
+	justify-content: center;
 }
