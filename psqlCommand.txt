@@ -1,0 +1,12 @@
+>> BIKIN DATABASE
+CREATE DATABASE proyek_basdat;
+
+>> BIKIN TABLE CUSTOMER
+CREATE TABLE customer (
+    nama_lengkap VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    JK CHAR NOT NULL,
+    telp VARCHAR(20) NOT NULL,
+    CONSTRAINT email_pk PRIMARY KEY(email)
+);

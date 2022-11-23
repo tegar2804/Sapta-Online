@@ -11,22 +11,22 @@
 <body>
     <div class="container">
         <div class="login">
-            <form action="">
+            <form action="" method="POST">
                 <h1>Login</h1>
                 <hr>
                 <p>Sapta Dharma Kantin Fateta</p>
-                <label for="">Email</label>
+                <label for="email">Email</label>
                 <input type="text" placeholder="example@gmail.com">
-                <label for="">Password</label>
+                <label for="password">Password</label>
                 <input type="password" placeholder="Password">
                 <button>
-                    <a href="beranda.php">Login</a>
+                    <input type="submit" value="Login" name="login"/>
                 </button>
                 <p>
                     <a href="forgotPassword.php">Forgot Password</a>
                 </p>
                 <p>
-                    <a href="resigter.php">Belum punya akun?</a>
+                    <a href="register.php">Belum punya akun?</a>
                 </p>
             </form>
         </div>

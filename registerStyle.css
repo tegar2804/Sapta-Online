@@ -90,7 +90,7 @@ button {
     background: #FDC886;
 }
 
-button a {
+button input {
     color: #FFFFFF;
     font-size: 16px;
     text-decoration: none;
