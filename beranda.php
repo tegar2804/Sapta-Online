@@ -28,7 +28,7 @@
             </label>
 
             <button class="login">
-                <a href="login.html">Login</a>
+                <a href="login.php">Login</a>
             </button>
 		</div>
 	</header>
@@ -124,8 +124,8 @@
         <section class="teks">
             <h4>TOP 3 KANTIN PALING LARIS</h4>
             <h3>KANTIN PALING LARIS</h3>
-            <p>Kantin terbaik menurut kami adalah seberapa banyak pelanggan menyukainya dari segi tempat, harga, kenyamanan, dan tentunya rasa makanan itu sendiri</p>
-            <button>
+            <p>Kantin terbaik menurut kami adalah seberapa banyak pelanggan menyukainya dari segi tempat, harga, kenyamanan, dan tentunya rasa makanan itu sendiri.</p>
+            <button class="lokitSemuaKantin">
                 <p>Lihat semua kantin ></p>
             </button>
         </section>
@@ -139,12 +139,13 @@
                             <img src="icon/Star 1.svg" alt="" class="star1">
                             <span class="starRating">5.0</span>
                             <span class="jumlahRating">(100+)</span>
+                            <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
                         </div>
                         <p class="judulMakanan">Nasi Pecel Sapta</p>
                         <div class="lokasiMakanan">
                             <i class="ri-map-pin-line"></i><span>Kantin Fateta</span>
                         </div>
-                        <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
+                        
                     </div>
                 </div>
             </div>
@@ -156,6 +157,7 @@
                         <img src="icon/Star 1.svg" alt="" class="star1">
                         <span class="starRating">5.0</span>
                         <span class="jumlahRating">(100+)</span">
+                        <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
                     </div>
                     <p class="judulMakanan">Nasi Padang Sapta</p>
                     <div class="lokasiMakanan">
@@ -171,6 +173,7 @@
                         <img src="icon/Star 1.svg" alt="" class="star1">
                         </i><span class="starRating">5.0</span>
                         <span class="jumlahRating">(100+)</span>
+                        <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
                     </div>
                     <p class="judulMakanan">Nasi Padang Sapta</p>
                     <div class="lokasiMakanan">
@@ -184,12 +187,10 @@
     <section class="makananBerdasarkanKantin">
         <h4>MAKANAN BERDASARKAN KANTIN</h4>
         <h3>Makanan Terlaris</h3>
-        <div class="dropdown">
-            <button>
-                <i class="ri-map-pin-line"></i><span>Nasi Padang, Kantin Fateta</span>
+        <button class="dropdown">
+                <i class="ri-map-pin-line"></i><span class="nasiPadang">Nasi Padang, Kantin Fateta</span><span><img src="icon/icon.svg" alt=""></span>
             </button>
-        </div>
-        <div class="card">
+        <div class="cardMakanan">
             <div class="mak1">
                 <img src="Images/image 8.png" alt="">
                 <div class="contMak1">

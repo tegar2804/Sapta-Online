@@ -20,13 +20,13 @@
                 <label for="">Password</label>
                 <input type="password" placeholder="Password">
                 <button>
-                    <a href="beranda.html">Login</a>
+                    <a href="beranda.php">Login</a>
                 </button>
                 <p>
-                    <a href="forgotPassword.html">Forgot Password</a>
+                    <a href="forgotPassword.php">Forgot Password</a>
                 </p>
                 <p>
-                    <a href="resigter.html">Belum punya akun?</a>
+                    <a href="resigter.php">Belum punya akun?</a>
                 </p>
             </form>
         </div>

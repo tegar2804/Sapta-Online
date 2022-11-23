@@ -33,10 +33,10 @@
                 <input type="text" placeholder="+62812XXXXXXXX">
 
                 <button>
-                    <a href="login.html">Register</a>
+                    <a href="login.php">Register</a>
                 </button>
                 <p>
-                    <a href="login.html">Sudah punya akun?</a>
+                    <a href="login.php">Sudah punya akun?</a>
                 </p>
             </form>
         </div>

@@ -436,6 +436,7 @@ header{
 
 .teks {
 	width: 40%;
+	margin-top: 100px;
 }	
 
 .teks h4 {
@@ -453,6 +454,28 @@ header{
 	font-size: 16px;
 }
 
+.lokitSemuaKantin {
+	top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #FDC886;
+	margin-top: 56px;
+}
+
+.lokitSemuaKantin p {
+	color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+}
+
 .carousel {
 	display: flex;
 }
@@ -465,6 +488,12 @@ header{
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.ratingMakanan {
+	padding-top: 25px;
+	padding-left: 25px;
 }
 
 .starRating {
@@ -480,12 +509,16 @@ header{
 }
 
 .judulMakanan {
+	padding-top: 5px;
+	padding-left: 25px;
 	font-weight: 700;
 	color: #000000;
 	font-size: 18px;
 }
 
 .lokasiMakanan {
+	padding-top: 5px;
+	padding-left: 25px;
 	color: #656565;
 }
 
@@ -496,10 +529,87 @@ header{
 
 .panahKanan {
 	float: right;
-	margin-right: 40px;
+	padding-top: 25px;
+	padding-right: 25px;
 }
 
 .content {
 	align-items: center;
 	justify-content: center;
+}
+
+.makananBerdasarkanKantin h4 {
+	color: #5A4FCF;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
+.makananBerdasarkanKantin h3 {
+	color: #232631;
+	font-size: 28px;
+	margin-left: 20px;
+}
+
+.card {
+	display: grid;
+	column-gap: 60px;
+}
+
+.dropdown {
+	float: right;
+	margin-bottom: 60px;
+	margin-right: 60px;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #232631;
+	font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #FDC886;
+}
+
+.nasiPadang {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.ri-map-pin-line {
+	margin-right: 8px;
+}
+
+.dropdown img {
+	padding-top: 4px;
+}
+
+.lokitKantin {
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #232631;
+	font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #FDC886;
+}
+
+.cardMakanan {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 10px;
+	width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
 }
