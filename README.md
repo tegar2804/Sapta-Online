@@ -1,5 +1,5 @@
 # Sapta-Online
-... merupakan website untuk bla bla bla.
+... merupakan website untuk memesan makanan dan minuman di kantin sapta.
 
 ## Anggota Kelompok (Kelompok 1)
 - Muhammad Naufal Daffa Salim (G6401211006) 
