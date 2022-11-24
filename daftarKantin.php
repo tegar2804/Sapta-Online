@@ -17,8 +17,8 @@
 
 		<ul class="navbar">
 			<li><a href="beranda.php" >Beranda</a></li>
-			<li><a href="#" class="active">Kantin</a></li>
-			<li><a href="#">Tentang Sapta</a></li>
+			<li><a href="daftarKantin.php" class="active">Kantin</a></li>
+			<li><a href="tentangSapta.php">Tentang Sapta</a></li>
         </ul>
 
 		<div class="main">
