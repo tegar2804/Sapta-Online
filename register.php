@@ -1,3 +1,30 @@
+<?php
+include("config.php");
+if(isset($_POST['regis'])&&!empty($_POST['regis'])){
+	$nama = $_POST['nama_lengkap'];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+	$passwordjuga = $_POST['passwordjuga'];
+	$jk = $_POST['jk'];
+	$telp = $_POST['telp'];
+
+    if(empty($nama) || empty($email) || empty($password) || empty($jk) || empty($telp)){
+        header('Location: register.php?status=kosong');
+    }else if($password != $passwordjuga){
+        header('Location: register.php?status=pwsalah');
+    }else{
+        $hashpassword = md5($password);
+  	    $query = pg_query("INSERT INTO customer (nama_lengkap, email, password, jk, telp) VALUEs ('$nama', '$email', '$hashpassword', '$jk', '$telp')");
+
+	    if($query == TRUE) {
+	    	header('Location: beranda.php');
+	    } else {
+	    	header('Location: register.php?status=gagal');
+	    }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,27 +38,39 @@
 <body>
     <div class="container">
         <div class="login">
-            <form action="prosesregister.php" method="POST">
+            <form action="" method="POST">
                 <h1>Register</h1>
                 <hr>
                 <p>Sapta Dharma Kantin Fateta</p>
-
+                <?php if(isset($_GET['status']) && $_GET['status'] == 'kosong'): ?>
+                    <p> ada yang kosong tuh ngab! </p>
+                <?php endif; ?>
+                
                 <label for="nama_lengkap">Nama Lengkap</label>
                 <input type="text" name="nama_lengkap" placeholder="Nama Lengkap">
                 
                 <label for="email">Email</label>
                 <input type="text" name="email" placeholder="example@gmail.com">
-
+                <?php if(isset($_GET['status']) && $_GET['status'] == 'gagal'): ?>
+                    <p> Email Sudah Terdaftar Ngab! </p>
+                <?php endif; ?>
+                
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Password">
 
+                <label for="passwordjuga">Re-type Password</label>
+                <input type="password" name="passwordjuga" placeholder="Re-type Password">
+                <?php if(isset($_GET['status']) && $_GET['status'] == 'pwsalah'): ?>
+                    <p> Password Salah! </p>
+                <?php endif; ?>
+                
                 <label for="JK">Jenis Kelamin</label>
                 <input type="radio" class="jk" name="jk" value="L"> Laki-laki
                 <input type="radio" class="jk" name="jk" value="P"> Perempuan
-
+                
                 <label for="telp">Nomor Telepon</label>
                 <input type="text" name="telp" placeholder="+62812XXXXXXXX">
-
+                
                 <button>
                     <input type="submit" value="Register" name="regis"/>
                     <!--a type="submit" value="regis" name="regis">Register</a-->
