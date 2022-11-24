@@ -22,9 +22,8 @@
         </ul>
 
 		<div class="main">
-            <input type="search" placeholder="Cari makanan favoritmu!" class="search">
             <label class="icon">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
             </label>
 
             <button class="login">

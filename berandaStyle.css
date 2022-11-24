@@ -87,28 +87,13 @@ header{
 	transition: all .50s ease;
 }
 
-.search {
-    top: 0;
-    height: 40px;
-    width: 240px;
-    border: none;
-    outline: none;
-    padding: 0px 10px;
-    color: #000000;
-    font-size: 16px;
-    font-family: 'Poppins';
-    font-weight: 200;
-    border-radius: 5px 0px 0px 5px;
-    margin-left: 40px;
-}
-
 .icon i{
     height: 50%;
     width: 40px;
     line-height: 40px;
     text-align: center;
     background: #EAE9F6;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .icon i:hover {
