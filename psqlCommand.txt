@@ -25,7 +25,7 @@ CREATE TABLE MENU (
     id_toko VARCHAR(8) NOT NULL,
     nama_menu VARCHAR(255) NOT NULL,
     harga_menu INT NOT NULL,
-    CONSTRAINT id_menu_pk PRIMARY KEY(id_barang),
+    CONSTRAINT id_menu_pk PRIMARY KEY(id_menu),
     CONSTRAINT id_toko_fk FOREIGN KEY(id_toko) REFERENCES TOKO(id_toko)
 );
 
@@ -72,3 +72,13 @@ INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T003', 'Warung Bumbu Kacang'
 INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T004', 'Mie Ayam Bakso', '08.00 - 17.00');
 INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T005', 'Juice', '08.00 - 17.00');
 INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T006', 'Aneka Minuman', '08.00 - 17.00');
+
+
+>> BIKIN TABLE DETAIL_ORDER
+CREATE TABLE DETAIL_ORDER (
+    id_order SERIAL NOT NULL,
+    id_menu VARCHAR(8) NOT NULL,
+    Qty INT NOT NULL,
+    CONSTRAINT id_order_fk FOREIGN KEY(id_order) REFERENCES pesanan(id_order),
+    CONSTRAINT id_menu_fk FOREIGN KEY(id_menu) REFERENCES MENU(id_menu)
+);
