@@ -24,8 +24,8 @@ CREATE TABLE MENU (
     id_menu VARCHAR(8) NOT NULL,
     id_toko VARCHAR(8) NOT NULL,
     nama_menu VARCHAR(255) NOT NULL,
-    harga_barang INT NOT NULL,
-    CONSTRAINT id_barang_pk PRIMARY KEY(id_barang),
+    harga_menu INT NOT NULL,
+    CONSTRAINT id_menu_pk PRIMARY KEY(id_barang),
     CONSTRAINT id_toko_fk FOREIGN KEY(id_toko) REFERENCES TOKO(id_toko)
 );
 
@@ -44,7 +44,7 @@ INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M001','T00
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M002','T001', 'nasi telur dadar', 8000);
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M003','T001', 'nasi lele', 10000);
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M004','T002', 'rendang', 16000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M005','T002', 'ayam balado', 20000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M005','T002', 'ayam bakar', 20000);
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M006','T002', 'ayam gulai', 20000);
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M007','T002', 'telur balado', 10000);
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M008','T003', 'ketoprak', 12000);
