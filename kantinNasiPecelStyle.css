@@ -1,0 +1,336 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+
+:root{
+	--bg-color: #fafafa;
+	--text-color: #000000;
+	--main-color: #5A4FCF;
+}
+
+body{
+	min-height: 100vh;
+	background: var(--bg-color);
+	color: var(--text-color);
+    height: 100%;
+    width: 100%;
+    background-color: #fafafa;
+    justify-content: center;
+}
+
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	backdrop-filter: blur(5px);
+  	background-color: rgba(255, 255, 255, .15);
+	padding: 28px 12%;
+	transition: all .50s ease;
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+}
+
+.logo i{
+	color: var(--main-color);
+	font-size: 28px;
+	margin-right: 3px;
+}
+
+.logo span{
+	color: var(--text-color);
+	font-size: 1.7rem;
+	font-weight: 600;
+}
+
+.navbar{
+	display: flex;
+}
+
+.navbar a{
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding: 5px 0;
+	margin: 0px 30px;
+	transition: all .50s ease;
+}
+
+.navbar a:hover{
+	color: var(--main-color);
+}
+
+.navbar a.active{
+	color: var(--main-color);
+}
+
+.main{
+	display: flex;
+	align-items: center;
+}
+
+.main a{
+	margin-right: 25px;
+	margin-left: 10px;
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+
+.search {
+    top: 0;
+    height: 40px;
+    width: 240px;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    color: #000000;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 200;
+    border-radius: 5px 0px 0px 5px;
+    margin-left: 40px;
+}
+
+.icon i{
+    height: 50%;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #EAE9F6;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.icon i:hover {
+    background: #5A4FCF;
+    color: #FFFFFF;
+}
+
+.login {
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #EAE9F6;
+	margin-left: 20px;
+}
+
+.login a {
+	margin-left: 20px;
+	color: #5A4FCF;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.login:hover {
+    background: #5A4FCF;	
+}
+
+.login a:hover {
+    color: #ffffff;
+}
+
+.main a:hover{
+	color: var(--main-color);
+}
+
+#menu-icon{
+	font-size: 35px;
+	color: var(--text-color);
+	cursor: pointer;
+	z-index: 10001;
+	display: none;
+}
+
+
+@media (max-width: 1280px){
+	header{
+		padding: 14px 2%;
+		transition: .2s;
+	}
+	.navbar a{
+		padding: 5px 0;
+		margin: 0px 20px;
+	}
+}
+
+@media (max-width: 1090px){
+	#menu-icon{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		width: 270px;
+		height: 29vh;
+		background: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-radius: 10px;
+		transition: all .50s ease;
+	}
+	.navbar a{
+		display: block;
+		margin: 12px 0;
+		padding: 0px 25px;
+		transition: all .50s ease;
+	}
+	.navbar a:hover{
+		color: var(--text-color);
+		transform: translateY(5px);
+	}
+}
+
+.top {
+    position: relative;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+}
+
+.top h3 {
+    font-size: 16px;
+    color: #868686;
+}
+
+.daftarKantin {
+    display: grid;
+	grid-template-columns: 240px 240px 240px;
+	grid-gap: 40px;
+    justify-content: left;
+	width: 100%;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+    margin-bottom: 40px;
+    margin-left: 100px;
+}
+
+.kantin {
+    margin-right: 25px;
+    background-color: #FFFFFF;
+    width: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    transition: cubic-bezier(0.175, 0.885, 0, 1);
+}
+
+.gambarKantin {
+    width: 100%;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gambarKantinHover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 105%;
+    position: absolute;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+    transition: 0.2s all ease-out;
+}
+
+.descKantin {
+    z-index: 2;
+    background-color: #FFFFFF;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+}
+
+.judulKantin {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.kisaranHarga {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.infoJamOperasional {
+    margin-right: 15px;
+    margin-top: 15px;
+    float: right;
+}
+
+.jamOperasional {
+    width: 15px;
+    vertical-align: middle;
+    fill: #ad7d52;
+}
+
+.waktuOperasional {
+    font-size: 12px;
+    color: #ad7d52;
+    vertical-align: middle;
+    margin-left: 5px; 
+}
+
+.tambahItem {
+    display: list-item;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+    float: right;
+    padding-bottom: 20px;
+}
+
+.tambahItem img {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    margin-bottom: 4px;
+}
+
+/* responsive */
+
+@media screen and (max-width: 700px) {
+    .kantin {
+        width: 200em;
+        display: block;
+        margin: 1em;
+    }
+
+    body {
+        display: flex;
+        align-items: flex-start;
+    }
+}

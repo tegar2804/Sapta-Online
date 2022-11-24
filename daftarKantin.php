@@ -18,7 +18,7 @@
 		<ul class="navbar">
 			<li><a href="beranda.php" >Beranda</a></li>
 			<li><a href="#" class="active">Kantin</a></li>
-			<li><a href="#">Tentang Sapta</a></li>		
+			<li><a href="#">Tentang Sapta</a></li>
         </ul>
 
 		<div class="main">
@@ -48,7 +48,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="#">
+            <a href="kantinNasiPecel.php">
                 <div class="gambarKantinHover" style="background-image: url(images/image\ 5.png);">
 
                 </div>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="#">
+            <a href="kantinNasiPadang.php">
                 <div class="gambarKantinHover" style="background-image: url(images/image\ 11.svg);">
 
                 </div>
@@ -96,7 +96,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="#">
+            <a href="kantinBumbuKacang.php">
                 <div class="gambarKantinHover" style="background-image: url(images/Resep-Gado-Gado\ \(1\).webp);">
 
                 </div>
@@ -122,7 +122,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="#">
+            <a href="kantinMieAyamBaksoEnak.php">
                 <div class="gambarKantinHover" style="background-image: url(images/Resep-Mie-Ayam-Ceker-Nikmat.jpg);">
 
                 </div>
@@ -146,7 +146,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="#">
+            <a href="kantinJusBuahSegarSapta.php">
                 <div class="gambarKantinHover" style="background-image: url(images/jus-cover.jpg);">
 
                 </div>
@@ -170,7 +170,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="#">
+            <a href="kantinAnekaMinumanSegar.php">
                 <div class="gambarKantinHover" style="background-image: url(images/minuman_kemasan_botol_image_2.jpg);">
 
                 </div>
