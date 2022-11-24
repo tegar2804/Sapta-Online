@@ -538,16 +538,23 @@ header{
 	justify-content: center;
 }
 
-.makananBerdasarkanKantin h4 {
-	color: #5A4FCF;
-	font-size: 16px;
-	margin-left: 20px;
+.makananTerlaris {
+	display: flex;
+	justify-content: space-between;
 }
 
-.makananBerdasarkanKantin h3 {
+.tekusu {
+	margin-left: 40px;
+}
+
+.tekusu h4 {
+	color: #5A4FCF;
+	font-size: 16px;
+}
+
+.tekusu h3 {
 	color: #232631;
 	font-size: 28px;
-	margin-left: 20px;
 }
 
 .card {
@@ -556,9 +563,8 @@ header{
 }
 
 .dropdown {
-	float: right;
-	margin-bottom: 60px;
-	margin-right: 60px;
+	margin-bottom: 40px;
+	margin-right: 40px;
 	top: 0;
 	display: flex;
 	align-items: center;
@@ -585,6 +591,18 @@ header{
 
 .dropdown img {
 	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.cardMakanan {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 10px;
+	width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
 }
 
 .lokitKantin {
@@ -601,15 +619,44 @@ header{
     cursor: pointer;
     border-radius: 5px;
     background: #FDC886;
+	margin-top: 56px;
+	margin-left: 600px;
+	margin-bottom: 56px;
 }
 
-.cardMakanan {
-	display: grid;
-	grid-template-columns: auto auto auto auto;
-	grid-gap: 10px;
-	width: 100%;
-    overflow-x: auto;
+.lokitKantin p {
+	font-weight: 700;
+}
+
+.mak {
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	margin-left: 50px;
+}
+
+.contMak {
+	position: absolute;
+	top: 64%;
+	left: 7%;
+	display: list-item;
+	width: 352px;
+	height: 131px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+	background-color: #fafafa;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.ratingMakanan {
+	padding-top: 25px;
+	padding-left: 25px;
+}
+
+.hargaMakanan {
+	padding-top: 5px;
+	padding-left: 25px;
+	color: #656565;
 }

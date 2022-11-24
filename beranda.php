@@ -17,8 +17,8 @@
 
 		<ul class="navbar">
 			<li><a href="#" class="active">Beranda</a></li>
-			<li><a href="#">Kantin</a></li>
-			<li><a href="#">Tentang Sapta</a></li>		
+			<li><a href="daftarKantin.php">Kantin</a></li>
+			<li><a href="tentangSapta.php">Tentang Sapta</a></li>		
         </ul>
 
 		<div class="main">
@@ -185,40 +185,66 @@
     </section>
 
     <section class="makananBerdasarkanKantin">
-        <h4>MAKANAN BERDASARKAN KANTIN</h4>
-        <h3>Makanan Terlaris</h3>
-        <button class="dropdown">
-                <i class="ri-map-pin-line"></i><span class="nasiPadang">Nasi Padang, Kantin Fateta</span><span><img src="icon/icon.svg" alt=""></span>
+        <section class="makananTerlaris">
+            <div class="tekusu">
+                <h4>MAKANAN BERDASARKAN KANTIN</h4>
+                <h3>Makanan Terlaris</h3>
+            </div>
+            <button class="dropdown">
+                <i class="ri-map-pin-line"></i>
+                <span class="nasiPadang">Nasi Padang, Kantin Fateta</span>
+                <span><img src="icon/icon.svg" alt=""></span>
             </button>
+        </section>
+        
         <div class="cardMakanan">
-            <div class="mak1">
-                <img src="Images/image 8.png" alt="">
-                <div class="contMak1">
-                    <img src="icon/Star 1.svg" alt="" class="star1"></i><span class="starRating">5.0</span><span>(1K+)</span>
-                    <p>Nasi Rendang</p>
-                    <p>IDR 15.000</p>
+            <div class="mak">
+                <img src="Images/image 12.svg" alt="">
+                <div class="contMak">
+                    <div class="ratingMakanan">
+                        <img src="icon/Star 1.svg" alt="" class="star1">
+                        </i><span class="starRating">5.0</span>
+                        <span class="jumlahRating">(1K+)</span>
+                        <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
+                    </div>
+                    <p class="judulMakanan">Nasi Rendang</p>
+                    <p class="hargaMakanan">IDR 15.000</p>
                 </div>
             </div>
-            <div class="mak2">
-                <img src="Images/image 10.png" alt="">
-                <div class="contMak2">
-                    <img src="icon/Star 1.svg" alt="" class="star1"></i><span class="starRating">5.0</span><span>(1.2K+)</span>
-                    <p>Nasi Ayam Bakar</p>
-                    <p>IDR 15.000</p>
+
+            <div class="mak">
+                <img src="Images/image 11.svg" alt="">
+                <div class="contMak">
+                    <div class="ratingMakanan">
+                        <img src="icon/Star 1.svg" alt="" class="star1">
+                        </i><span class="starRating">5.0</span>
+                        <span class="jumlahRating">(1.2K+)</span>
+                        <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
+                    </div>
+                    <p class="judulMakanan">Nasi Ayam Bakar</p>
+                    <p class="hargaMakanan">IDR 15.000</p>
                 </div>
             </div>
-            <div class="mak3">
-                <img src="Images/image 11.png" alt="">
-                <div class="contMak3">
-                    <img src="icon/Star 1.svg" alt="" class="star1"></i><span class="starRating">5.0</span><span>(500+)</span>
-                    <p>Nasi Telor Dadar</p>
-                    <p>IDR 10.000</p>
+
+            <div class="mak">
+                <img src="Images/image 10.svg" alt="">
+                <div class="contMak">
+                    <div class="ratingMakanan">
+                        <img src="icon/Star 1.svg" alt="" class="star1">
+                        </i><span class="starRating">5.0</span>
+                        <span class="jumlahRating">(500K+)</span>
+                        <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
+                    </div>
+                    <p class="judulMakanan">Nasi Telor Dadar</p>
+                    <p class="hargaMakanan">IDR 10.000</p>
                 </div>
             </div>
         </div>
+
         <button class="lokitKantin">
             <p>Lihat Semua Kantin ></p>
         </button>
+
     </section>
 </body>
 </html>
