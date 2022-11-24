@@ -175,7 +175,7 @@
                         <span class="jumlahRating">(100+)</span>
                         <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
                     </div>
-                    <p class="judulMakanan">Nasi Padang Sapta</p>
+                    <p class="judulMakanan">Bento Anjay</p>
                     <div class="lokasiMakanan">
                         <i class="ri-map-pin-line"></i><span>Kantin Fateta</span>
                     </div>
