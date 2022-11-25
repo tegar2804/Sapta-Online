@@ -131,7 +131,7 @@
 
         <section class="carousel">
             <div class="card">
-                <img src="Images/nasiTelorSapta.svg" alt="">
+                <img src="Images/nasiTelorSapta 1.png" alt="">
                 <div class="cont">
                     <div class="content">
                         <div class="ratingMakanan">
@@ -150,7 +150,7 @@
             </div>
 
             <div class="card">
-                <img src="Images/nasiPadangSapta.svg" alt="">
+                <img src="Images/nasiPadangSapta 1.png" alt="">
                 <div class="cont">
                     <div class="ratingMakanan">
                         <img src="icon/Star 1.svg" alt="" class="star1">
@@ -166,7 +166,7 @@
             </div>
             
             <div class="card">
-                <img src="Images/nasiBentoSapta.svg" alt="">
+                <img src="Images/nasiBentoSapta 1.png" alt="">
                 <div class="cont">
                     <div class="ratingMakanan">
                         <img src="icon/Star 1.svg" alt="" class="star1">
@@ -198,7 +198,7 @@
         
         <div class="cardMakanan">
             <div class="mak">
-                <img src="Images/image 12.svg" alt="">
+                <img src="Images/nasi padang pake rendang.png" alt="">
                 <div class="contMak">
                     <div class="ratingMakanan">
                         <img src="icon/Star 1.svg" alt="" class="star1">
@@ -212,7 +212,7 @@
             </div>
 
             <div class="mak">
-                <img src="Images/image 11.svg" alt="">
+                <img src="Images/nasi padang pake ayam bakar.png" alt="">
                 <div class="contMak">
                     <div class="ratingMakanan">
                         <img src="icon/Star 1.svg" alt="" class="star1">
@@ -226,7 +226,7 @@
             </div>
 
             <div class="mak">
-                <img src="Images/image 10.svg" alt="">
+                <img src="Images/nasi padang pake telor.png" alt="">
                 <div class="contMak">
                     <div class="ratingMakanan">
                         <img src="icon/Star 1.svg" alt="" class="star1">
