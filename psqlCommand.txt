@@ -39,32 +39,6 @@ CREATE TABLE pesanan (
     CONSTRAINT email_fk FOREIGN KEY(email) REFERENCES CUSTOMER(email)
 );
 
->> insert MENU
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M001','T001', 'nasi ayam', 12000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M002','T001', 'nasi telur dadar', 8000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M003','T001', 'nasi lele', 10000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M004','T002', 'rendang', 16000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M005','T002', 'ayam bakar', 20000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M006','T002', 'ayam gulai', 20000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M007','T002', 'telur balado', 10000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M008','T003', 'ketoprak', 12000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M009','T003', 'gado-gado', 10000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M010','T003', 'doclang', 10000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M011','T003', 'siomay', 10000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M012','T004', 'mie ayam oringinal', 12000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M013','T004', 'mie ayam ceker', 15000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M014','T004', 'bakso special', 12000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M015','T004', 'mie ayam bakso', 17000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M016','T005', 'jus alpukat', 12000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M017','T005', 'jus mangga', 11000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M018','T005', 'jus melon', 11000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M019','T005', 'jus jeruk', 10000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M020','T005', 'jus sirsak', 11000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M021','T006', 'air mineral', 4000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M022','T006', 'es teh', 4000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M023','T006', 'minuman soda', 6000);
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_barang) VALUES ('M024','T006', 'kopi', 5000);
-
 >> insert TOKO
 INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T001', 'Warung Nasi Pecel', '08.00 - 17.00');
 INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T002', 'Rumah Makan Padang', '08.00 - 17.00');
@@ -73,6 +47,31 @@ INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T004', 'Mie Ayam Bakso', '08
 INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T005', 'Juice', '08.00 - 17.00');
 INSERT INTO TOKO(id_toko, nama_toko, waktu) VALUES('T006', 'Aneka Minuman', '08.00 - 17.00');
 
+>> insert MENU
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M001','T001', 'nasi ayam', 12000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M002','T001', 'nasi telur dadar', 8000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M003','T001', 'nasi lele', 10000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M004','T002', 'rendang', 16000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M005','T002', 'ayam bakar', 20000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M006','T002', 'ayam gulai', 20000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M007','T002', 'telur balado', 10000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M008','T003', 'ketoprak', 12000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M009','T003', 'gado-gado', 10000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M010','T003', 'doclang', 10000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M011','T003', 'siomay', 10000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M012','T004', 'mie ayam oringinal', 12000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M013','T004', 'mie ayam ceker', 15000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M014','T004', 'bakso special', 12000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M015','T004', 'mie ayam bakso', 17000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M016','T005', 'jus alpukat', 12000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M017','T005', 'jus mangga', 11000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M018','T005', 'jus melon', 11000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M019','T005', 'jus jeruk', 10000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M020','T005', 'jus sirsak', 11000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M021','T006', 'air mineral', 4000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M022','T006', 'es teh', 4000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M023','T006', 'minuman soda', 6000);
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu) VALUES ('M024','T006', 'kopi', 5000);
 
 >> BIKIN TABLE DETAIL_ORDER
 CREATE TABLE DETAIL_ORDER (
