@@ -47,7 +47,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="kantinNasiPecel.php">
+            <a href="kantin.php">
                 <div class="gambarKantinHover" style="background-image: url(images/image\ 5.png);">
 
                 </div>
@@ -71,7 +71,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="kantinNasiPadang.php">
+            <a href="kantin.php">
                 <div class="gambarKantinHover" style="background-image: url(images/image\ 11.png);">
 
                 </div>
@@ -95,7 +95,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="kantinBumbuKacang.php">
+            <a href="kantin.php">
                 <div class="gambarKantinHover" style="background-image: url(images/Resep-Gado-Gado\ \(1\).webp);">
 
                 </div>
@@ -121,7 +121,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="kantinMieAyamBaksoEnak.php">
+            <a href="kantin.php">
                 <div class="gambarKantinHover" style="background-image: url(images/Resep-Mie-Ayam-Ceker-Nikmat.jpg);">
 
                 </div>
@@ -145,7 +145,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="kantinJusBuahSegarSapta.php">
+            <a href="kantin.php">
                 <div class="gambarKantinHover" style="background-image: url(images/jus-cover.jpg);">
 
                 </div>
@@ -169,7 +169,7 @@
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="kantinAnekaMinumanSegar.php">
+            <a href="kantin.php">
                 <div class="gambarKantinHover" style="background-image: url(images/minuman_kemasan_botol_image_2.jpg);">
 
                 </div>
