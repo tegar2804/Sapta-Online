@@ -1,3 +1,6 @@
+<?php 
+    include("config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +25,8 @@
         </ul>
 
 		<div class="main">
-        <label class="icon">
-                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <label class="icon">
+                <i class="fa-solid fa-cart-shopping"></i>
             </label>
 
             <button class="login">
@@ -37,151 +40,37 @@
     </section>
 
     <section class="daftarKantin">
+        <?php
+		$query = pg_query("SELECT * FROM toko");
+		
+		while($toko = pg_fetch_array($query)){;?>
         <article class="kantin">
+            <?php
+            $kisaran = pg_fetch_array(pg_query("SELECT MIN(harga_menu), MAX(harga_menu) FROM menu WHERE id_toko = '".$toko['id_toko']."'"));
+            ?>
 
             <div class="infoJamOperasional">
                 <svg class="jamOperasional" viewBox="0 0 24 24">
                     <path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
                </svg>
-               <span class="waktuOperasional">08:00 - 17:00</span>
+               <span class="waktuOperasional"><?php echo date("H:i", strtotime($toko['waktu_buka'])) ?> - <?php echo date("H:i", strtotime($toko['waktu_tutup'])) ?></span>
             </div>
 
             <div class="gambarKantin"></div>
-            <a href="kantin.php">
-                <div class="gambarKantinHover" style="background-image: url(images/image\ 5.png);">
+            <a href="kantin.php?toko=<?php echo $toko['id_toko']?>">
+                <div class="gambarKantinHover" style="background-image: url(<?php echo $toko['foto_toko'] ?>);">
 
                 </div>
             </a>
             
             <div class="descKantin">
-                <span class="kategoriMakanan">Makanan</span>
-                <h3 class="judulKantin">Warung Nasi Pecel</h3>
-                <span class="kisaranHarga">IDR 8K-12K</span>
+                <span class="kategoriMakanan"><?php echo $toko['kategori'] ?></span>
+                <h3 class="judulKantin"><?php echo $toko['nama_toko'] ?></h3>
+                <span class="kisaranHarga">IDR <?php echo $kisaran['min']/1000 ?>K-<?php echo $kisaran['max']/1000 ?>K</span>
             </div>
 
         </article>
-
-        <article class="kantin">
-
-            <div class="infoJamOperasional">
-                <svg class="jamOperasional" viewBox="0 0 24 24">
-                    <path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-               </svg>
-               <span class="waktuOperasional">08:00 - 17:00</span>
-            </div>
-
-            <div class="gambarKantin"></div>
-            <a href="kantin.php">
-                <div class="gambarKantinHover" style="background-image: url(images/image\ 11.png);">
-
-                </div>
-            </a>
-            
-            <div class="descKantin">
-                <span class="kategoriMakanan">Makanan</span>
-                <h3 class="judulKantin">Rumah Makan Padang</h3>
-                <span class="kisaranHarga">IDR 10K-20K</span>
-            </div>
-
-        </article>
-
-        <article class="kantin">
-
-            <div class="infoJamOperasional">
-                <svg class="jamOperasional" viewBox="0 0 24 24">
-                    <path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-               </svg>
-               <span class="waktuOperasional">08:00 - 17:00</span>
-            </div>
-
-            <div class="gambarKantin"></div>
-            <a href="kantin.php">
-                <div class="gambarKantinHover" style="background-image: url(images/Resep-Gado-Gado\ \(1\).webp);">
-
-                </div>
-            </a>
-            
-            <div class="descKantin">
-                <span class="kategoriMakanan">Makanan</span>
-                <h3 class="judulKantin">Warung Bumbu Kacang</h3>
-                <span class="kisaranHarga">IDR 10K-12K</span>
-            </div>
-
-        </article>
-    </section>
-
-    <section class="daftarKantin">
-        <article class="kantin">
-
-            <div class="infoJamOperasional">
-                <svg class="jamOperasional" viewBox="0 0 24 24">
-                    <path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-               </svg>
-               <span class="waktuOperasional">08:00 - 17:00</span>
-            </div>
-
-            <div class="gambarKantin"></div>
-            <a href="kantin.php">
-                <div class="gambarKantinHover" style="background-image: url(images/Resep-Mie-Ayam-Ceker-Nikmat.jpg);">
-
-                </div>
-            </a>
-            
-            <div class="descKantin">
-                <span class="kategoriMakanan">Makanan</span>
-                <h3 class="judulKantin">Mie Ayam Bakso Enak</h3>
-                <span class="kisaranHarga">IDR 12K-17K</span>
-            </div>
-
-        </article>
-
-        <article class="kantin">
-
-            <div class="infoJamOperasional">
-                <svg class="jamOperasional" viewBox="0 0 24 24">
-                    <path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-               </svg>
-               <span class="waktuOperasional">08:00 - 17:00</span>
-            </div>
-
-            <div class="gambarKantin"></div>
-            <a href="kantin.php">
-                <div class="gambarKantinHover" style="background-image: url(images/jus-cover.jpg);">
-
-                </div>
-            </a>
-            
-            <div class="descKantin">
-                <span class="kategoriMakanan">Minuman</span>
-                <h3 class="judulKantin">Jus Buah Segar Sapta</h3>
-                <span class="kisaranHarga">IDR 10K-12K</span>
-            </div>
-
-        </article>
-
-        <article class="kantin">
-
-            <div class="infoJamOperasional">
-                <svg class="jamOperasional" viewBox="0 0 24 24">
-                    <path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
-               </svg>
-               <span class="waktuOperasional">08:00 - 17:00</span>
-            </div>
-
-            <div class="gambarKantin"></div>
-            <a href="kantin.php">
-                <div class="gambarKantinHover" style="background-image: url(images/minuman_kemasan_botol_image_2.jpg);">
-
-                </div>
-            </a>
-            
-            <div class="descKantin">
-                <span class="kategoriMakanan">Minuman</span>
-                <h3 class="judulKantin">Aneka Minuman Segar</h3>
-                <span class="kisaranHarga">IDR 4K-5K</span>
-            </div>
-
-        </article>
+        <?php }; ?>
     </section>
 
 </body>
