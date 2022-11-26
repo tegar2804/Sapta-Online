@@ -9,7 +9,7 @@
 
 :root{
 	--bg-color: #fafafa;
-	--text-color: #000000;
+	--text-color: #232631;
 	--main-color: #5A4FCF;
 }
 
@@ -237,12 +237,41 @@ header{
 
 .detailSapta {
 	display: flex;
-	width: 50%;
+	width: 30%;
+	height: 280px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     border-radius: 0.5rem;
+}
+
+.main1 {
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	margin-left: 40px;
+	margin-top: 30px;
+}
+
+.descDetailSapta h3{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-size: 22px;
+	color: #232631;
+}
+
+.descDetailSapta h4 {
+	color: #656565;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.detailLokasi {
+	color: #656565;
+	font-size: 16px;
+	margin-bottom: 10px;
 }
 
 .cekKantin {
@@ -257,14 +286,18 @@ header{
     cursor: pointer;
     border-radius: 5px;
     background: #FDC886;
-	margin-left: 20px;
+	margin-top: 10px;
 }
 
 .cekKantin a {
-	color: #000000;
+	color: #232631;
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
+}
+
+.ingfo {
+	margin-top: 10px;
 }
 
 .alasanMakanDiSapta {
@@ -301,7 +334,7 @@ header{
 	display: flex;
 	justify-content: center;
 	font-size: 28px;
-	color: #000000;
+	color: #232631;
 }
 
 .murah {
@@ -346,7 +379,7 @@ header{
 }
 
 .lihatDetailAktif p{
-	color: #000000;
+	color: #232631;
 	font-weight: 600;
 }
 
@@ -415,7 +448,8 @@ header{
 
 .kantinPalingLaris {
 	font-family: 'Poppins', sans-serif;
-	margin: 40px;
+	margin-left: 40px;
+	margin-top: 40px;
 	display: flex;
 }
 
@@ -455,14 +489,18 @@ header{
 }
 
 .lokitSemuaKantin p {
-	color: #000000;
+	color: #232631;
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
 }
 
 .carousel {
-	display: flex;
+	margin-left: 200px;
+	display: grid;
+	grid-template-columns: 200px 200px 200px;
+	grid-gap: 15px;
+	overflow: hidden;
 }
 
 .cont {
@@ -471,9 +509,26 @@ header{
 	height: 131px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     border-radius: 0.5rem;
 	overflow: hidden;
+	bottom: 150px;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	background-color: #FFFFFF;
+	left: 20px;
+}
+
+.card {
+	display: grid;
+	column-gap: 100px;
+	overflow: hidden;
+	border-radius: 24px 24px 24px 24px;
+}
+
+.card:hover {
+	cursor: pointer;
+	width: 352px;
 }
 
 .ratingMakanan {
@@ -497,7 +552,7 @@ header{
 	padding-top: 5px;
 	padding-left: 25px;
 	font-weight: 700;
-	color: #000000;
+	color: #232631;
 	font-size: 18px;
 }
 
@@ -518,13 +573,6 @@ header{
 	padding-right: 25px;
 }
 
-.content {
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	bottom: 240px;
-}
-
 .makananTerlaris {
 	display: flex;
 	justify-content: space-between;
@@ -542,21 +590,6 @@ header{
 .tekusu h3 {
 	color: #232631;
 	font-size: 28px;
-}
-
-.card {
-	display: grid;
-	column-gap: 60px;
-	overflow: hidden;
-}
-
-.card:hover {
-	cursor: pointer;
-}
-
-.content:hover {
-	height: 220px;
-	bottom: 240px;
 }
 
 .dropdown {
@@ -642,7 +675,6 @@ header{
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 	background-color: #fafafa;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     border-radius: 0.5rem;
 	overflow: hidden;
 }

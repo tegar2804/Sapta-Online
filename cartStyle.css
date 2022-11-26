@@ -125,6 +125,11 @@ header{
 	align-items: center;
 }
 
+.main{
+	display: flex;
+	align-items: center;
+}
+
 .main a{
 	margin-right: 25px;
 	margin-left: 10px;
@@ -141,34 +146,19 @@ header{
     text-align: center;
     background: #EAE9F6;
     border-radius: 5px 5px 5px 5px;
+    margin-right: 20px;
+}
+
+.icon span {
+    margin-left: -15px;
+    font-weight: 600;
+    color: #5A4FCF;
+    font-size: 16px;
 }
 
 .icon i:hover {
     background: #5A4FCF;
     color: #FFFFFF;
-}
-
-.login {
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    outline: none;
-    padding: 10px;
-    width: 100px;
-    cursor: pointer;
-    border-radius: 5px;
-    background: #EAE9F6;
-	margin-left: 20px;
-}
-
-.login a {
-	margin-left: 20px;
-	color: #5A4FCF;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
 }
 
 .login:hover {

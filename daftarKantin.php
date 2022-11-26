@@ -22,8 +22,8 @@
         </ul>
 
 		<div class="main">
-            <label class="icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+        <label class="icon">
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
             </label>
 
             <button class="login">

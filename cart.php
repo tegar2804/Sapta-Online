@@ -16,7 +16,7 @@
 		<a href="#" class="logo"><i class="ri-home-6-fill"></i><span>Sapta</span></a>
 
 		<ul class="navbar">
-			<li><a href="#" class="active">Beranda</a></li>
+			<li><a href="beranda.php">Beranda</a></li>
 			<li><a href="daftarKantin.php">Kantin</a></li>
 			<li><a href="tentangSapta.php">Tentang Sapta</a></li>		
         </ul>
@@ -26,9 +26,9 @@
                 <i class="fa-solid fa-cart-shopping"></i>    
             </label>
 
-            <button class="login">
-                <a href="login.php">Login</a>
-            </button>
+            <label class="icon">
+                <i class="fa-solid fa-user"></i> <span>Hi! User</span>
+            </label>
 		</div>
 	</header>
 

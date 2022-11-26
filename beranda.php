@@ -16,14 +16,14 @@
 		<a href="#" class="logo"><i class="ri-home-6-fill"></i><span>Sapta</span></a>
 
 		<ul class="navbar">
-			<li><a href="#" class="active">Beranda</a></li>
+			<li><a href="beranda.php" class="active">Beranda</a></li>
 			<li><a href="daftarKantin.php">Kantin</a></li>
 			<li><a href="tentangSapta.php">Tentang Sapta</a></li>		
         </ul>
 
 		<div class="main">
             <label class="icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
             </label>
 
             <button class="login">

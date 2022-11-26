@@ -23,7 +23,7 @@
 
 		<div class="main">
             <label class="icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
             </label>
 
             <button class="login">
