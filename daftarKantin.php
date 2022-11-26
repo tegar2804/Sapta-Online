@@ -24,15 +24,31 @@
 			<li><a href="tentangSapta.php">Tentang Sapta</a></li>
         </ul>
 
+        <?php
+        session_start();
+        if(!isset($_SESSION['email'])){;
+        ?>
 		<div class="main">
             <label class="icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
             </label>
 
             <button class="login">
                 <a href="login.php">Login</a>
             </button>
 		</div>
+        <?php }else{; ?>
+        <div class="main">
+            <label class="icon">
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            </label>
+            
+            <label class="icon">
+            <i class="fa-solid fa-user"></i> <span>Hi! <?php echo $_SESSION['nama'] ?></span>
+            </label>
+            <a href="logout.php">logout</a>
+		</div>
+        <?php }; ?>
 	</header>
     
     <section class="top">

@@ -1,10 +1,17 @@
 <?php
 include("config.php");
+session_start();
+if(isset($_SESSION['email'])){
+    header("Location: beranda.php");
+    exit;
+}
 if(isset($_POST['login'])&&!empty($_POST['login'])){
     $hashpassword = md5($_POST['password']);
     $data = pg_query("select * from customer where email = '".pg_escape_string($_POST['email'])."' and password ='".$hashpassword."'"); 
     $login_check = pg_num_rows($data);
     if($login_check > 0){ 
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['nama'] = pg_fetch_array($data)['nama_lengkap'];
         header('Location: beranda.php');
     }else{
         header('Location: login.php?status=gagal');

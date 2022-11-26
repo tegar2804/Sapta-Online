@@ -1,5 +1,10 @@
 <?php
 include("config.php");
+session_start();
+if(isset($_SESSION['email'])){
+    header("Location: beranda.php");
+    exit;
+}
 if(isset($_POST['regis'])&&!empty($_POST['regis'])){
 	$nama = $_POST['nama_lengkap'];
 	$email = $_POST['email'];
@@ -17,7 +22,7 @@ if(isset($_POST['regis'])&&!empty($_POST['regis'])){
   	    $query = pg_query("INSERT INTO customer (nama_lengkap, email, password, jk, telp) VALUEs ('$nama', '$email', '$hashpassword', '$jk', '$telp')");
 
 	    if($query == TRUE) {
-	    	header('Location: beranda.php');
+	    	header('Location: login.php');
 	    } else {
 	    	header('Location: register.php?status=gagal');
 	    }

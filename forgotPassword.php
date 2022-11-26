@@ -1,5 +1,10 @@
 <?php
 include("config.php");
+session_start();
+if(isset($_SESSION['email'])){
+    header("Location: beranda.php");
+    exit;
+}
 if(isset($_POST['cont'])&&!empty($_POST['cont'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
