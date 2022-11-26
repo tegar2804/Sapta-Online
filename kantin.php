@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kantin Nasi Pecel | Sapta</title>
-    <link rel="stylesheet" href="kantinNasiPecelStyle.css">
+    <link rel="stylesheet" href="kantinStyle.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -32,62 +32,43 @@
 		</div>
 	</header>
     
+    <?php 
+    include("config.php");
+    if(isset($_GET['toko'])){
+        $id = $_GET['toko'];
+        $toko = pg_fetch_array(pg_query("SELECT * FROM toko WHERE id_toko = '".$_GET['toko']."'"));
+	}else{
+		die("akses dilarang...");
+	}
+    ?>
+    
     <section class="top">
-        <h1>Kantin Nasi Pecel</h1>
-        <h3>08:00 - 17:00</h3>
+        <h1><?php echo $toko['nama_toko'] ?></h1>
+        <h3><?php echo date("H:i", strtotime($toko['waktu_buka'])) ?> - <?php echo date("H:i", strtotime($toko['waktu_tutup'])) ?></h3>
     </section>
 
     <section class="daftarKantin">
+        <?php
+		$query = pg_query("SELECT * FROM menu WHERE id_toko='".$id."'");
+		
+		while($menu = pg_fetch_array($query)){;?>
         <article class="kantin">
 
             <div class="gambarKantin"></div>
             <a href="#">
-                <div class="gambarKantinHover" style="background-image: url(images/Pecel-Ayam-2.jpg);"></div>
+                <div class="gambarKantinHover" style="background-image: url(<?php echo $menu['foto_menu'] ?>);"></div>
             </a>
             
             <div class="descKantin">
-                <h3 class="judulKantin">Nasi Ayam</h3>
-                <p class="kisaranHarga">IDR 12.000</p>
+                <h3 class="judulKantin"><?php echo $menu['nama_menu'] ?></h3>
+                <p class="kisaranHarga">IDR <?php echo number_format($menu['harga_menu'], '0', ',', '.') ?></p>
                 <a class="tambahItem" href="#">
                     <img src="icon/+cartKuning.svg" alt="">
                 </a>
             </div>
 
         </article>
-
-        <article class="kantin">
-
-            <div class="gambarKantin"></div>
-            <a href="#">
-                <div class="gambarKantinHover" style="background-image: url(images/image\ 5.png);"></div>
-            </a>
-            
-            <div class="descKantin">
-                <h3 class="judulKantin">Nasi Telur Dadar</h3>
-                <p class="kisaranHarga">IDR 8.000</p>
-                <a class="tambahItem" href="#">
-                    <img src="icon/+cartKuning.svg" alt="">
-                </a>
-            </div>
-
-        </article>
-
-        <article class="kantin">
-
-            <div class="gambarKantin"></div>
-            <a href="#">
-                <div class="gambarKantinHover" style="background-image: url(images/pecel\ lele.jpeg);"></div>
-            </a>
-            
-            <div class="descKantin">
-                <h3 class="judulKantin">Nasi Lele</h3>
-                <p class="kisaranHarga">IDR 10.000</p>
-                <a class="tambahItem" href="#">
-                    <img src="icon/+cartKuning.svg" alt="">
-                </a>
-            </div>
-
-        </article>
+        <?php }; ?>
     </section>
 
 </body>
