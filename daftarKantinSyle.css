@@ -103,6 +103,26 @@ header{
 .icon i:hover {
     background: #5A4FCF;
     color: #FFFFFF;
+    font-size: 16px;
+}
+
+.nyambutUser {
+	color: #5A4FCF;
+	font-size: 16px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 10px;
+	font-weight: 600;
+}
+
+.tombolLogout {
+	color: #656565;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.tombolLogout:hover {
+	color: #5A4FCF;
 }
 
 .login {

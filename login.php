@@ -35,17 +35,31 @@ if(isset($_POST['login'])&&!empty($_POST['login'])){
             <form method="POST">
                 <h1>Login</h1>
                 <hr>
-                <p>Sapta Dharma Kantin Fateta</p>
+                <p class="desc">Sapta Dharma Kantin Fateta</p>
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'gagal'): ?>
-                    <p> Email dan Password tidak cocok! </p>
+                    <p style="color: #fd3a4a; font-size:16px; font-weight:600"> Email dan Password tidak cocok! </p>
                 <?php endif; ?>
                 <label for="email">Email</label>
                 <input type="text" name="email" placeholder="example@gmail.com">
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Password">
-                <button>
-                    <input type="submit" value="Login" name="login"/>
-                </button>
+                
+                <input class="loginLurde" type="submit" value="Login" name="login"/>
+                
+                <style>
+                    .loginLurde {
+                        background-color:#FDC886; 
+                        color:#FFFFFF;
+                        border:none;
+                        margin-top:10px;
+                        cursor:pointer;
+                        font-weight:500;
+                    }
+                    .loginLurde:hover {
+                        background: rgba(20, 200, 64, 1);
+                    }
+                </style>
+
                 <p>
                     <a href="forgotPassword.php">Forgot Password</a>
                 </p>

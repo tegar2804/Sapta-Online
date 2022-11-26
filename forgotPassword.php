@@ -48,22 +48,35 @@ if(isset($_POST['cont'])&&!empty($_POST['cont'])){
                 
                 <input type="text" name="email" placeholder="Masukkan email">
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'terdaftar'): ?>
-                    <a href="register.php"> Email belum terdaftar! </a>
+                    <a href="register.php" style="color: #fd3a4a; font-size:16px; font-weight:600"> Email belum terdaftar! </a>
                 <?php endif; ?>
 
                 <input type="password" name="password" placeholder="Masukan password baru">
                 <input type="password" name="passwordjuga" placeholder="Konfirmasi password baru">
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'pwsalah'): ?>
-                    <p> Password Salah! </p>
+                    <p style="color: #fd3a4a; font-size:16px; font-weight:600"> Password Salah! </p>
                 <?php endif; ?>
 
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'gagal'): ?>
-                    <p> Gagal Mengganti Password! </p>
+                    <p style="color: #fd3a4a; font-size:16px; font-weight:600"> Gagal Mengganti Password! </p>
                 <?php endif; ?>
-                    
-                <button>
-                    <input type="submit" value="Continue" name="cont"/>
-                </button>
+                
+                <input class="submit" type="submit" value="Continue" name="cont"/>
+                
+                <style>
+                    .submit {
+                        background-color:#FDC886; 
+                        color:#FFFFFF;
+                        border:none;
+                        margin-top:10px;
+                        cursor:pointer;
+                        font-weight:500;
+                    }
+                    .submit:hover {
+                        background: rgba(20, 200, 64, 1);
+                    }
+                </style>
+                
             </form>
         </div>
     </div>

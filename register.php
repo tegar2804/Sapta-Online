@@ -48,7 +48,7 @@ if(isset($_POST['regis'])&&!empty($_POST['regis'])){
                 <hr>
                 <p>Sapta Dharma Kantin Fateta</p>
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'kosong'): ?>
-                    <p> ada yang kosong tuh ngab! </p>
+                    <p style="color: #fd3a4a; font-size:16px; font-weight:600"> ada yang kosong tuh ngab! </p>
                 <?php endif; ?>
                 
                 <label for="nama_lengkap">Nama Lengkap</label>
@@ -57,7 +57,7 @@ if(isset($_POST['regis'])&&!empty($_POST['regis'])){
                 <label for="email">Email</label>
                 <input type="text" name="email" placeholder="example@gmail.com">
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'gagal'): ?>
-                    <p> Email Sudah Terdaftar Ngab! </p>
+                    <p style="color: #fd3a4a; font-size:12px"> Email Sudah Terdaftar Ngab! </p>
                 <?php endif; ?>
                 
                 <label for="password">Password</label>
@@ -66,7 +66,7 @@ if(isset($_POST['regis'])&&!empty($_POST['regis'])){
                 <label for="passwordjuga">Re-type Password</label>
                 <input type="password" name="passwordjuga" placeholder="Re-type Password">
                 <?php if(isset($_GET['status']) && $_GET['status'] == 'pwsalah'): ?>
-                    <p> Password Salah! </p>
+                    <p style="color: #fd3a4a; font-size:16px; font-weight:600"> Password Salah! </p>
                 <?php endif; ?>
                 
                 <label for="JK">Jenis Kelamin</label>
@@ -76,10 +76,22 @@ if(isset($_POST['regis'])&&!empty($_POST['regis'])){
                 <label for="telp">Nomor Telepon</label>
                 <input type="text" name="telp" placeholder="+62812XXXXXXXX">
                 
-                <button>
-                    <input type="submit" value="Register" name="regis"/>
-                    <!--a type="submit" value="regis" name="regis">Register</a-->
-                </button>
+                <input id="submit" type="submit" value="Register" name="regis"/>
+                
+                <style>
+                    #submit {
+                        background-color:#FDC886; 
+                        color:#FFFFFF;
+                        border:none;
+                        margin-top:10px;
+                        cursor:pointer;
+                        font-weight:500;
+                    }
+                    #submit:hover {
+                        background: rgba(20, 200, 64, 1);
+                    }
+                </style>
+
                 <p>
                     <a href="login.php">Sudah punya akun?</a>
                 </p>

@@ -42,7 +42,7 @@ hr {
     border-top: 2px solid #FDC886;
 }
 
-p {
+.desc {
     text-align: center;
     margin: 10px;
 }
@@ -70,27 +70,6 @@ input {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid gray;
-}
-
-button {
-    border: none;
-    outline: none;
-    padding: 8px;
-    width: 252px;
-    cursor: pointer;
-    margin-top: 20px;
-    border-radius: 5px;
-    background: #FDC886;
-}
-
-button a {
-    color: #FFFFFF;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-button:hover {
-    background: rgba(20, 200, 64, 1);
 }
 
 @media (max-width: 880px) {

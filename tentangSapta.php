@@ -41,12 +41,13 @@
             </label>
             
             <label class="icon">
-            <i class="fa-solid fa-user"></i> <span>Hi! <?php echo $_SESSION['nama'] ?></span>
+                <i class="fa-solid fa-user"></i> 
             </label>
-            <a href="logout.php">logout</a>
+            <span class="nyambutUser">Hi! <?php echo $_SESSION['nama'] ?></span>
+            <p>|</p>
+            <a href="logout.php" class="tombolLogout">Log out</a>
 		</div>
         <?php }; ?>
-	</header>
 	</header>
 
     <div class="parallax">

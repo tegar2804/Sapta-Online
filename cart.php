@@ -33,8 +33,11 @@ if(!isset($_SESSION['email'])){
             </label>
 
             <label class="icon">
-                <i class="fa-solid fa-user"></i> <span>Hi! User</span>
+                <i class="fa-solid fa-user"></i> 
             </label>
+            <span class="nyambutUser">Hi! <?php echo $_SESSION['nama'] ?></span>
+            <p>|</p>
+            <a href="logout.php" class="tombolLogout">Log out</a>
 		</div>
 	</header>
 

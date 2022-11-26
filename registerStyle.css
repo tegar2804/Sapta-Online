@@ -79,7 +79,7 @@ input {
     margin           : 0.25em 0.5em 0.25em 0.25em;
 }
 
-button {
+#submit {
     border: none;
     outline: none;
     padding: 8px;
@@ -88,16 +88,7 @@ button {
     margin-top: 20px;
     border-radius: 5px;
     background: #FDC886;
-}
-
-button input {
-    color: #FFFFFF;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-button:hover {
-    background: rgba(20, 200, 64, 1);
+    
 }
 
 @media (max-width: 880px) {
