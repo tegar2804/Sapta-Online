@@ -1,6 +1,9 @@
 >> BIKIN DATABASE
 CREATE DATABASE proyek_basdat;
 
+>> Janlup Kalo Connect Ke Satabasenya Dulu
+\c proyek_basdat
+
 >> BIKIN TABLE CUSTOMER
 CREATE TABLE customer (
     nama_lengkap VARCHAR(255) NOT NULL,
