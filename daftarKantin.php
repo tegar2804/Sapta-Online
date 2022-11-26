@@ -72,7 +72,7 @@
 
             <div class="gambarKantin"></div>
             <a href="kantinNasiPadang.php">
-                <div class="gambarKantinHover" style="background-image: url(images/image\ 11.svg);">
+                <div class="gambarKantinHover" style="background-image: url(images/image\ 11.png);">
 
                 </div>
             </a>
