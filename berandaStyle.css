@@ -521,6 +521,8 @@ header{
 .content {
 	align-items: center;
 	justify-content: center;
+	position: absolute;
+	bottom: 240px;
 }
 
 .makananTerlaris {
@@ -545,6 +547,16 @@ header{
 .card {
 	display: grid;
 	column-gap: 60px;
+	overflow: hidden;
+}
+
+.card:hover {
+	cursor: pointer;
+}
+
+.content:hover {
+	height: 220px;
+	bottom: 240px;
 }
 
 .dropdown {

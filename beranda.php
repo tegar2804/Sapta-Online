@@ -144,7 +144,6 @@
                         <div class="lokasiMakanan">
                             <i class="ri-map-pin-line"></i><span>Kantin Fateta</span>
                         </div>
-                        
                     </div>
                 </div>
             </div>
