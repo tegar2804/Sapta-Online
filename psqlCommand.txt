@@ -70,7 +70,7 @@ INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M016','T004', 'Mie Ayam Bakso', 17000, 'images/mie\ ayam\ bakso.webp');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M017','T005', 'Jus Alpukat', 12000, 'images/Jus-Alpukat.webp');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M018','T005', 'Jus Mangga', 11000, 'images/Jus-Mangga.webp');
-INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M019','T005', 'Jus Melon', 11000, 'images/Jus\ Melon.webp');
+INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M019','T005', 'Jus Melon', 11000, 'images/Jus\ Melon.jpe');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M020','T005', 'Jus Jeruk', 10000, 'images/Jus-Jeruk-Sederhana-1.jpg');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M021','T005', 'Jus Sirsak', 11000, 'images/Resep-Jus-Sirsak-scaled.webp');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M022','T006', 'Air Mineral', 4000, 'images/air\ mineral.webp');
