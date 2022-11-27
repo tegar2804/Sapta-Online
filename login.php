@@ -9,7 +9,13 @@ if(isset($_POST['login'])&&!empty($_POST['login'])){
     $hashpassword = md5($_POST['password']);
     $data = pg_query("select * from customer where email = '".pg_escape_string($_POST['email'])."' and password ='".$hashpassword."'"); 
     $login_check = pg_num_rows($data);
+    
     if($login_check > 0){ 
+        $datacart = pg_query("select * from pesanan where email = '".pg_escape_string($_POST['email'])."' and status_bayar = FALSE");
+        $checkcart = pg_num_rows($datacart);
+        if($checkcart > 0){
+            $_SESSION['cart'] = pg_fetch_array($datacart)['id_order'];
+        }
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['nama'] = pg_fetch_array($data)['nama_lengkap'];
         header('Location: beranda.php');

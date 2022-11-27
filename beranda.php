@@ -62,8 +62,12 @@
                     </div>
                 </div>
                 <div class="desc">
+                    <?php
+                    include("config.php");
+                    $kisaran = pg_fetch_array(pg_query("SELECT MIN(harga_menu), MAX(harga_menu) FROM menu"));
+                    ?>
                     <h3>Sapta Dharma</h3>
-                    <h4>IDR 3.000 - IDR 20.000</h4>
+                    <h4>IDR <?php echo number_format($kisaran['min'], '0', ',', '.') ?> - IDR <?php echo number_format($kisaran['max'], '0', ',', '.') ?></h4>
                     <i class="ri-map-pin-line"></i><span>Kantin Fateta</span>
                 </div>
                 <button class="cekKantin">

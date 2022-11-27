@@ -81,7 +81,7 @@
             <div class="descKantin">
                 <h3 class="judulKantin"><?php echo $menu['nama_menu'] ?></h3>
                 <p class="kisaranHarga">IDR <?php echo number_format($menu['harga_menu'], '0', ',', '.') ?></p>
-                <a class="tambahItem" href="#">
+                <a class="tambahItem" href="incdec.php?status=inc&menu=<?php echo $menu['id_menu'] ?>&from=<?php echo $id ?>">
                     <img src="icon/+cartKuning.svg" alt="">
                 </a>
             </div>

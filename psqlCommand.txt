@@ -89,3 +89,6 @@ CREATE TABLE DETAIL_ORDER (
     CONSTRAINT id_order_fk FOREIGN KEY(id_order) REFERENCES pesanan(id_order),
     CONSTRAINT id_menu_fk FOREIGN KEY(id_menu) REFERENCES MENU(id_menu)
 );
+
+>> NAMBAH ATTRIBUTE 'status_bayar' untuk TABEL pesanan
+ALTER TABLE pesanan ALTER COLUMN status_bayar BOOLEAN NOT NULL;

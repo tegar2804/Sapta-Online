@@ -1,4 +1,5 @@
 <?php
+include("config.php");
 session_start();
 if(!isset($_SESSION['email'])){
     header("Location: login.php");
@@ -107,80 +108,73 @@ if(!isset($_SESSION['email'])){
                       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
                 </div>
-
+                <?php if(isset($_SESSION['cart'])){
+                    $total = pg_fetch_array(pg_query("SELECT harga_total FROM pesanan WHERE id_order = '".$_SESSION['cart']."' and not status_bayar"))['harga_total'];
+                    if($total > 0){; ?>
+                    <button class="btn btn-primary">
+                        <a href="bayar.php">
+                        <b>Bayar</b> IDR <span id="payAmount"><?php echo number_format($total, '0', ',', '.') ?></span>
+                        </a>
+                    </button>
+                    <?php }else{; ?>
+                    <button class="btn btn-primary">
+                        <b>Bayar</b> IDR <span id="payAmount"><?php echo number_format($total, '0', ',', '.') ?></span>
+                    </button>
+                    <?php }; ?>
+                <?php }else{; ?>
                 <button class="btn btn-primary">
-                    <b>Bayar</b> IDR <span id="payAmount">32.000</span>
+                    <b>Bayar</b> IDR <span id="payAmount">0</span>
                 </button>
+                <?php }; ?>
             </section>
 
             <section class="cart">
                 <div class="cartItemBox">
                     <h2 class="sectionHeading">Riwayat Pemesanan</h2>
-                    <div class="productCard">
-                        <div class="card">
-                            <div class="imgBox">
-                                <img src="images/image 10.png" alt="Nasi Padang Ayam Bakar" width="80px" class="productImage">
-                            </div>
+                    <?php
+                    
+                    if(isset($_SESSION['cart'])){
+                        $query = pg_query("SELECT D.id_order, M.id_menu, nama_menu, foto_menu, harga_menu, qty FROM menu M, detail_order D, pesanan O WHERE (not O.status_bayar) and M.id_menu = D.id_menu and O.id_order = D.id_order and O.id_order = '".$_SESSION['cart']."'");
+                        while($cart = pg_fetch_array($query)){; ?>
+                        <div class="productCard">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="<?php echo $cart['foto_menu'] ?>" alt="<?php echo $cart['nama_menu'] ?>" width="80px" class="productImage">
+                                </div>
 
-                            <div class="detail">
-                                <h4 class="namaProduk">Nasi Padang Ayam Bakar</h4>
-                                <div class="wrapper">
-                                    <div class="jumlahProduk">
-                                        <button id="decrement">
-                                            <i class="fa-solid fa-circle-minus"></i>
-                                        </button>
+                                <div class="detail">
+                                    <h4 class="namaProduk"><?php echo $cart['nama_menu'] ?></h4>
+                                    <div class="wrapper">
+                                        <div class="jumlahProduk">
+                                            <button id="decrement">
+                                                <a href="incdec.php?status=dec&menu=<?php echo $cart['id_menu'] ?>&from=cart">
+                                                    <i class="fa-solid fa-circle-minus"></i>
+                                                </a>
+                                            </button>
 
-                                        <span id="jumlah">1</span>
+                                            <span id="jumlah"><?php echo $cart['qty'] ?></span>
 
-                                        <button id="increment">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                        </button>
-                                    </div>
+                                            <button id="increment">
+                                                <a href="incdec.php?status=inc&menu=<?php echo $cart['id_menu'] ?>&from=cart">
+                                                    <i class="fa-solid fa-circle-plus"></i>
+                                                </a>
+                                            </button>
+                                        </div>
 
-                                    <div class="harga">
-                                        IDR <span id="price">16.000</span>
+                                        <div class="harga">
+                                            IDR <span id="price"><?php echo number_format($cart['harga_menu']*$cart['qty'], '0', ',', '.') ?></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <button class="closeButton">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
+                                <button class="closeButton">
+                                    <a href="delcart.php?menu=<?php echo $cart['id_menu'] ?>">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="productCard">
-                        <div class="card">
-                            <div class="imgBox">
-                                <img src="images/image 8.png" alt="Nasi Padang Rendang" width="80px" class="productImage">
-                            </div>
-
-                            <div class="detail">
-                                <h4 class="namaProduk">Nasi Padang Rendang</h4>
-                                <div class="wrapper">
-                                    <div class="jumlahProduk">
-                                        <button id="decrement">
-                                            <i class="fa-solid fa-circle-minus"></i>
-                                        </button>
-
-                                        <span id="jumlah">1</span>
-
-                                        <button id="increment">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="harga">
-                                        IDR <span id="price">16.000</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button class="closeButton">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </div>
-                    </div>
+                    <?php }}; ?>
                 </div>
 
                 <div class="wrapper">
@@ -194,9 +188,15 @@ if(!isset($_SESSION['email'])){
                     </div>
 
                     <div class="amount">
+                        <?php if(isset($_SESSION['cart'])){; ?>
                         <div class="totalHarga">
-                            <span>Total Harga</span> <span>IDR<span id="totalHarga"> 32.000</span></span>
+                            <span>Total Harga</span> <span>IDR<span id="totalHarga"> <?php echo number_format($total, '0', ',', '.') ?> </span></span>
                         </div>
+                        <?php }else{; ?>
+                        <div class="totalHarga">
+                            <span>Total Harga</span> <span>IDR<span id="totalHarga"> 0</span></span>
+                        </div>
+                        <?php }; ?>
 
                         
                     </div>
