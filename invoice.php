@@ -87,7 +87,7 @@
 
                 <div class="totalMakanan">
                     <h3>Daftar makanan yang dibeli</h3>
-                    <h4>Total: 5 Makanan</h4>
+                    <h4>Total: 2 Makanan</h4>
                 </div>
 
                 <div class="listMakanan">
@@ -112,6 +112,10 @@
             </div>
         </div>
     </div>
+
+    <section class="backButton">
+        <button class="backBtn"><a href="cart.php">Kembali</a></button>
+    </section>
 
 </body>
 </html>

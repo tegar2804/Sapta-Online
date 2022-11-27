@@ -368,3 +368,39 @@ h4 {
 	text-align: right;
 	margin-top: 0px !important;
 }
+
+.backButton {
+	position: absolute;
+	background: #e3f2fd;
+	margin-top: 680px;
+	margin-left: 780px;
+}
+
+.backButton button {
+	font-size: 18px;
+	font-weight: 400;
+	color: #FFFFFF;
+	padding: 14px 22px;
+	border: none;
+	background: #5A4FCF;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.backButton button a {
+	font-size: 18px;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+
+.backButton button:hover {
+	background-color: #265df2;
+}
+
+.backBtn {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
