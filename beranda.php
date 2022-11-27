@@ -50,20 +50,6 @@
 	</header>
 
     <section class="container">
-        <div class="slider-wrapper">
-            <div class="slider">
-                <img id="slide-1" src="Images/image 9.png" alt="">
-                <img id="slide-2" src="Images/image 12.png" alt="">
-                <img id="slide-3" src="Images/image 13.png" alt="">
-            </div>
-            
-            <div class="slider-nav">
-                <a href="#slide-1"></a>
-                <a href="#slide-2"></a>
-                <a href="#slide-3"></a>
-            </div>
-        </div>
-
         <section class="detailSapta">
             <div class="main1">
                 <div class="rating">
@@ -81,13 +67,56 @@
                     <i class="ri-map-pin-line"></i><span>Kantin Fateta</span>
                 </div>
                 <button class="cekKantin">
-                    <a href="#">Cek Kantin ></a>
+                    <a href="daftarKantin.php">Cek Kantin ></a>
                 </button>
                 <div class="info">
                     <i class="ri-information-line"></i><span>No extra cost</span>
                 </div>
             </div>
         </section>
+
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radioBtn" id="radio1">
+                <input type="radio" name="radioBtn" id="radio2">
+                <input type="radio" name="radioBtn" id="radio3">
+
+                <div class="slide first">
+                    <img src="images/image 9.png" width="1500px" style="border-radius: 24px;" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/image 12.png" width="1500px" style="border-radius: 24px;" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/image 13.png" width="1500px" style="border-radius: 24px;" alt="">
+                </div>
+
+                <div class="autoNavigation">
+                    <div class="autoBtn1"></div>
+                    <div class="autoBtn2"></div>
+                    <div class="autoBtn3"></div>
+                </div>
+            </div>
+            
+            <div class="manualNavigation">
+                <label for="radio1" class="manualBtn"></label>
+                <label for="radio2" class="manualBtn"></label>
+                <label for="radio3" class="manualBtn"></label>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var counter = 1;
+            setInterval(function(){
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if(counter > 3){
+                    counter = 1;
+                }
+            }, 5000);
+        </script>
+
+        
     </section>
 
     <section class="hero1">
@@ -142,7 +171,7 @@
             <h3>KANTIN PALING LARIS</h3>
             <p>Kantin terbaik menurut kami adalah seberapa banyak pelanggan menyukainya dari segi tempat, harga, kenyamanan, dan tentunya rasa makanan itu sendiri.</p>
             <button class="lokitSemuaKantin">
-                <p>Lihat semua kantin ></p>
+                <a href="daftarKantin.php"><p>Lihat semua kantin ></p></a>
             </button>
         </section>
 
@@ -223,7 +252,7 @@
                         <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
                     </div>
                     <p class="judulMakanan">Nasi Rendang</p>
-                    <p class="hargaMakanan">IDR 15.000</p>
+                    <p class="hargaMakanan">IDR 16.000</p>
                 </div>
             </div>
 
@@ -237,7 +266,7 @@
                         <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
                     </div>
                     <p class="judulMakanan">Nasi Ayam Bakar</p>
-                    <p class="hargaMakanan">IDR 15.000</p>
+                    <p class="hargaMakanan">IDR 16.000</p>
                 </div>
             </div>
 
@@ -257,7 +286,7 @@
         </div>
 
         <button class="lokitKantin">
-            <p>Lihat Semua Kantin ></p>
+            <a href="daftarKantin.php"><p>Lihat Semua Kantin ></p></a>
         </button>
 
     </section>
