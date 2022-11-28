@@ -123,7 +123,7 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
                     ?>
                     <ul class="menuMakanan">
                         <li><?php echo $data_menu['nama_menu'] ?></li> <span>x<?php echo $data_menu['qty'] ?> = </span>
-                        <li>IDR <?php echo number_format($data_menu['harga_menu'], 0, ',', '.') ?></li>
+                        <li>IDR <?php echo number_format($data_menu['harga_menu']*$data_menu['qty'], 0, ',', '.') ?></li>
                     </ul>
                     <?php }
                         $subtotal =  pg_fetch_array(pg_query("SELECT SUM(qty*harga_menu) FROM detail_order D, menu M WHERE D.id_menu = M.id_menu and id_order = ".$_GET['id']." and id_toko = '".$data_toko['id_toko']."'"))['sum'];
