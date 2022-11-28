@@ -146,6 +146,18 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
                             font-weight: 500;
                             color: #232631;
                         }
+
+                        .container {
+                            min-height: 456px;
+                            height: auto;
+                            height: auto;
+	                        min-height: 456px;
+                        }
+
+                        .backButton {
+                            margin-left: 530px;
+                        }
+                        
                     </style>
                     <?php }; ?>
                 </div>

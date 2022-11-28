@@ -284,7 +284,8 @@ span {
 .right {
     background-color: #fefefe;
     width: 61%;
-    height: 100%;
+    height: auto;
+	min-height: 456px;
     float: left;
     border-radius: 0 5px 5px 0;
 }
@@ -373,7 +374,6 @@ h4 {
 	position: absolute;
 	background: #e3f2fd;
 	margin-top: 680px;
-	margin-left: 780px;
 }
 
 .backButton button {
