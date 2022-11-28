@@ -123,7 +123,7 @@ if(!isset($_SESSION['email'])){
                     <?php }; ?>
                 <?php }else{; ?>
                 <button class="btn btn-primary">
-                    <a href="invoice.php">
+                    <a href="">
                         <b>Bayar</b> IDR <span id="payAmount">0</span>
                     </a>
 
