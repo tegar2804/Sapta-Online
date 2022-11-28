@@ -9,6 +9,7 @@ $query = pg_query("SELECT D.id_order, email, tanggal_order, harga_total, status_
 $data_invoice = pg_fetch_array($query);
 if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar'])){
     echo "AKSES DILARANG!!";
+    exit;
 }
 ?>
 <!DOCTYPE html>
