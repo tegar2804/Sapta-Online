@@ -11,53 +11,6 @@
 	--bg-color: #fafafa;
 	--text-color: #232631;
 	--main-color: #5A4FCF;
-	--primary-color: #FDC886;
-}
-
-button {
-	border: none;
-	background: none;
-	font: inherit;
-	cursor: pointer;
-  	overflow: hidden;
-}
-
-label, img {
-	display: block;
-}
-
-input {
-	font: "Poppins", sans-serif;
-	width: 100%;
-	border: none;
-}
-
-input:focus {
-	outline: 2px solid var(--main-color);
-}
-
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
-	appearance: none;
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-::-webkit-scrollbar {
-	width: 8px;
-}
-
-::-webkit-scrollbar-track {
-	background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-	background: hsl(0, 0%, 80%);
-	border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: hsl(0, 0%, 70%);
 }
 
 body{
@@ -146,6 +99,16 @@ header{
 .icon i:hover {
     background: #5A4FCF;
     color: #FFFFFF;
+	font-size: 16px;
+}
+
+.nyambutUser {
+	color: #5A4FCF;
+	font-size: 16px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 10px;
+	font-weight: 600;
 }
 
 .login {
@@ -181,6 +144,16 @@ header{
 
 .main a:hover{
 	color: var(--main-color);
+}
+
+.tombolLogout {
+	color: #656565;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.tombolLogout:hover {
+	color: #5A4FCF;
 }
 
 #menu-icon{
@@ -286,10 +259,11 @@ header{
 	justify-content: space-around;
 	gap: 30px;
 	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dcdcdc;
 }
 
 .metodePembayaran .pilihMetode {
-	border: 1px solid var(#232631);
 	border-radius: 5px;
 	width: 30%;
 	display: flex;
@@ -297,10 +271,20 @@ header{
 	padding: 15px 30px;
 	gap: 30px;
 	cursor: pointer;
+	border: 2px solid #5A4FCF;
+	background-color: #fafafa;
+}
+
+.fa-money-bill-transfer {
+	color: #5A4FCF;
+}
+
+.pilihMetode span {
+	color: #5A4FCF;
+	font-weight: 600;
 }
 
 .metodePembayaran .metode {
-	border: 1px solid var(#232631);
 	border-radius: 5px;
 	width: 30%;
 	display: flex;
@@ -308,10 +292,29 @@ header{
 	padding: 15px 30px;
 	gap: 30px;
 	cursor: pointer;
+	border: 1px solid #5A4FCF;
+	background-color: #fafafa;
 }
 
-.metodePembayaran .pilihMetode {
+.metodePembayaran .metode {
 	border-color: #232631;
+}
+
+.metode:hover {
+	color: #5A4FCF;
+	border-color: #5A4FCF;
+}
+
+.metode i:hover {
+	color: #5A4FCF;
+}
+
+.metode .fa-circle-check:hover {
+	color: #5A4FCF;
+}
+
+.metode .fa-regular:hover {
+	color: #5A4FCF;
 }
 
 .metodePembayaran .pilihMetode i {
@@ -325,7 +328,7 @@ header{
 
 .metodePembayaran .pilihMetode .fa-solid {
 	margin-left: auto;
-	color: #232631;
+	color: #5A4FCF;
 }
 
 .metodePembayaran .pilihMetode .fa-circle-check {
@@ -339,12 +342,10 @@ header{
 
 .metodePembayaran .metode .fa-regular {
 	margin-left: auto;
-	color: #232631;
 }
 
 .metodePembayaran .metode .fa-circle-check {
 	margin-left: auto;
-	color: #5A4FCF;
 }
 
 .containerRadio {
@@ -418,6 +419,7 @@ input:checked+.radio-tile label {
 .btn {
 	border-radius: 5px;
 	margin-top: 200px;
+	border: 1px solid #5A4FCF;
 }
 
 .btn:active {
@@ -440,6 +442,10 @@ input:checked+.radio-tile label {
 
 .btn-primary b {
 	margin-right: 10px;
+}
+
+.btn-primary a {
+	color: #FFFFFF;
 }
 
 .cart {
@@ -529,6 +535,13 @@ input:checked+.radio-tile label {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border: none;
+	color: #5A4FCF;
+	background-color: #fafafa;
+}
+
+.jumlahProduk .fa-solid {
+	color: #5A4FCF;
 }
 
 .jumlahProduk button:active,
@@ -544,6 +557,8 @@ input:checked+.radio-tile label {
 	position: absolute;
 	top: 0;
 	right: 0;
+	border: none;
+	background-color: #fafafa;
 }
 
 .closeButton i {
@@ -562,11 +577,11 @@ input:checked+.radio-tile label {
 }
 
 .labelDefault {
-	color: #656565;
+	color: #fafafa;
 }
 
 .inputDefault {
-	color: #656565;
+	color: #fafafa;
 }
 
 .wrapperFlex {
@@ -580,6 +595,7 @@ input:checked+.radio-tile label {
 	font-weight: 600;
 	letter-spacing: 2px;
 	border-radius: 5px;
+	border: 1px solid #5A4FCF;
 }
 
 .btn2 {
@@ -587,6 +603,7 @@ input:checked+.radio-tile label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #fafafa;
 }
 
 .btn2:active {

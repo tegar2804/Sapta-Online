@@ -118,22 +118,39 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
                     ?>
                     <h5>Warung Makan Padang</h5>
                     <ul class="menuMakanan">
-                        <li>Nasi Padang Ayam Bakar</li>
+                        <li>Nasi Padang Ayam Bakar</li> <span>x1 = </span>
                         <li>IDR 16.000</li>
                     </ul>
                     <ul class="menuMakanan">
-                        <li>Nasi Padang Rendang</li>
+                        <li>Nasi Padang Rendang</li> <span>x1 = </span>
                         <li>IDR 16.000</li>
                     </ul>
+                    <h6 class="totalPerToko">Total = IDR 32.000</h6>
+
+                    <style>
+                        .menuMakanan span {
+                            position: absolute;
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #232631;
+                            margin-left: 272px;
+                        }
+
+                        .totalPerToko {
+                            position: flex;
+                            float: right;
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #232631;
+                        }
+                    </style>
                 </div>
 
                 <div class="pesan">
                     <p>Pesanan Anda sudah kami terima, silahkan nanti ambil langsung di Kantin Sapta Fateta ya. Terimakasih!</p>
                 </div>
 
-                <div class="footer">
-                    <h6>Invoice ID: 121236</h6>
-                </div>
+                <div class="footer"></div>
             </div>
         </div>
     </div>
