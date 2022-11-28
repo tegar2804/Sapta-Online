@@ -12,7 +12,7 @@ if(!isset($_SESSION['email'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keranjang | Sapta</title>
-    <link rel="stylesheet" href="cartStyle.css">
+    <link rel="stylesheet" href="cart2Style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -140,19 +140,19 @@ if(!isset($_SESSION['email'])){
                 <div class="cartItemBox">
                     <h2 class="sectionHeading">Riwayat Pemesanan</h2>
                     <?php
-                    
                     if(isset($_SESSION['cart'])){
-                        $query = pg_query("SELECT D.id_order, M.id_menu, nama_menu, foto_menu, harga_menu, qty FROM menu M, detail_order D, pesanan O WHERE (not O.status_bayar) and M.id_menu = D.id_menu and O.id_order = D.id_order and O.id_order = '".$_SESSION['cart']."'");
+                        $query = pg_query("SELECT D.id_order, M.id_menu, nama_menu, foto_menu, harga_menu, qty FROM menu M, detail_order D, pesanan O WHERE (not O.status_bayar) and M.id_menu = D.id_menu and O.id_order = D.id_order and O.id_order = '".$_SESSION['cart']."' ORDER BY M.id_menu");
                         while($cart = pg_fetch_array($query)){; ?>
-                        <div class="productCard">
-                            <div class="card">
-                                <div class="imgBox">
-                                    <img src="<?php echo $cart['foto_menu'] ?>" alt="<?php echo $cart['nama_menu'] ?>" width="80px" class="productImage">
-                                </div>
+                    <div class="productCard">
+                        <div class="card">
+                            <div class="imgBox">
+                                <a href="#">
+                                    <div class="gambarMakanan" style="background-image: url(<?php echo $cart['foto_menu'] ?>);"></div>
+                                </a>
 
-                                <div class="detail">
-                                    <h4 class="namaProduk"><?php echo $cart['nama_menu'] ?></h4>
-                                    <div class="wrapper">
+                                <div class="descProductImage">
+                                    <h3 class="judulProduct"><?php echo $cart['nama_menu'] ?></h3>
+                                    <div class="hargaQuantity">
                                         <div class="jumlahProduk">
                                             <button id="decrement">
                                                 <a href="incdec.php?status=dec&menu=<?php echo $cart['id_menu'] ?>&from=cart">
@@ -167,21 +167,19 @@ if(!isset($_SESSION['email'])){
                                                     <i class="fa-solid fa-circle-plus"></i>
                                                 </a>
                                             </button>
-                                        </div>
-
-                                        <div class="harga">
-                                            IDR <span id="price"><?php echo number_format($cart['harga_menu']*$cart['qty'], '0', ',', '.') ?></span>
+                                            <p class="kisaranHarga">IDR <span id="price"><?php echo number_format($cart['harga_menu']*$cart['qty'], '0', ',', '.') ?></span></p>
                                         </div>
                                     </div>
                                 </div>
-
+                                
                                 <button class="closeButton">
                                     <a href="delcart.php?menu=<?php echo $cart['id_menu'] ?>">
-                                    <i class="fa-solid fa-xmark"></i>
+                                        <i class="fa-solid fa-xmark"></i>
                                     </a>
                                 </button>
                             </div>
                         </div>
+                    </div>
                     <?php }}; ?>
                 </div>
 
