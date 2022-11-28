@@ -5,7 +5,7 @@ if(!isset($_SESSION['email'])){
     header("Location: login.php");
     exit;
 }
-$query = pg_query("SELECT D.id_order, email, tanggal_order, harga_total, status_bayar, M.id_menu, nama_menu, harga_menu, qty FROM pesanan O, menu M, detail_order D WHERE O.id_order = D.id_order and M.id_menu = D.id_menu and D.id_order = ".$_GET['id']."");
+$query = pg_query("SELECT D.id_order, email, tanggal_order, harga_total, status_bayar, SUM(qty) FROM pesanan O, detail_order D WHERE O.id_order = D.id_order and D.id_order = ".$_GET['id']." GROUP BY D.id_order, email, tanggal_order, harga_total, status_bayar");
 $data_invoice = pg_fetch_array($query);
 if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar'])){
     echo "AKSES DILARANG!!";
@@ -103,30 +103,33 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
             <div class="content">
                 <div class="header">
                     <img src="icon/logoSapta.png" alt="">
-                    <h4><?php echo date('d F Y', strtotime($data_invoice['tanggal_order'])) ?> | 09:17 WIB</h4>
+                    <h4><?php echo date('d F Y', strtotime($data_invoice['tanggal_order'])) ?></h4>
                 </div>
 
                 <div class="totalMakanan">
                     <h3>Daftar menu yang dibeli</h3>
-                    <h4>Total: 2 Menu</h4>
+                    <h4>Total: <?php echo $data_invoice['sum'] ?> Menu</h4>
                 </div>
 
                 <div class="listMakanan">
                     <?php
-                        $query_toko = pg_query("SELECT D.id_order, email, tanggal_order, harga_total, status_bayar, M.id_menu, nama_menu, harga_menu, qty FROM pesanan O, menu M, detail_order D WHERE O.id_order = D.id_order and M.id_menu = D.id_menu and D.id_order = ".$_GET['id']."");
-                        $data_toko = pg_fetch_array($query_toko);
+                        $query_toko = pg_query("SELECT DISTINCT M.id_toko, nama_toko FROM detail_order D, menu M, toko T WHERE D.id_menu = M.id_menu and T.id_toko = M.id_toko and id_order = ".$_GET['id']."");
+                        while($data_toko = pg_fetch_array($query_toko)){;
                     ?>
-                    <h5>Warung Makan Padang</h5>
+                    <h5><?php echo $data_toko['nama_toko'] ?></h5>
+                    <?php 
+                        $query_menu = pg_query("SELECT D.id_menu, qty, nama_menu, harga_menu FROM detail_order D, menu M WHERE D.id_menu = M.id_menu and id_order = ".$_GET['id']." and id_toko = '".$data_toko['id_toko']."'");
+                        while($data_menu = pg_fetch_array($query_menu)){;
+                    ?>
                     <ul class="menuMakanan">
-                        <li>Nasi Padang Ayam Bakar</li> <span>x1 = </span>
-                        <li>IDR 16.000</li>
+                        <li><?php echo $data_menu['nama_menu'] ?></li> <span>x<?php echo $data_menu['qty'] ?> = </span>
+                        <li>IDR <?php echo number_format($data_menu['harga_menu'], 0, ',', '.') ?></li>
                     </ul>
-                    <ul class="menuMakanan">
-                        <li>Nasi Padang Rendang</li> <span>x1 = </span>
-                        <li>IDR 16.000</li>
-                    </ul>
-                    <h6 class="totalPerToko">Total = IDR 32.000</h6>
-
+                    <?php }
+                        $subtotal =  pg_fetch_array(pg_query("SELECT SUM(qty*harga_menu) FROM detail_order D, menu M WHERE D.id_menu = M.id_menu and id_order = ".$_GET['id']." and id_toko = '".$data_toko['id_toko']."'"))['sum'];
+                    ?>
+                    <h6 class="totalPerToko">Total = IDR <?php echo number_format($subtotal, 0, ',', '.') ?></h6>
+                    
                     <style>
                         .menuMakanan span {
                             position: absolute;
@@ -144,6 +147,7 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
                             color: #232631;
                         }
                     </style>
+                    <?php }; ?>
                 </div>
 
                 <div class="pesan">
