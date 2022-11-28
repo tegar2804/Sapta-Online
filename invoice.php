@@ -85,7 +85,15 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
 
                 <div class="entry">
                     <i class="icon-notebook" aria-hidden></i>
-                    <p>Nomor Order: <br> <span>SPTA<?php echo $data_invoice['id_order'] ?></span></p>
+                    <?php 
+                    $str = "";
+                    $num = $data_invoice['id_order'];
+                    while($num < 1000){
+                        $str .= "0";
+                        $num *= 10;
+                    }
+                    ?>
+                    <p>Nomor Order: <br> <span>SPTA<?php echo $str; echo $data_invoice['id_order'] ?></span></p>
                 </div>
             </div>
         </div>
