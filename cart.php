@@ -131,6 +131,14 @@ if(!isset($_SESSION['email'])){
                         .btn a {
                             color: #FFFFFF;
                         }
+
+                        .labelDefault {
+                            color: #656565;
+                        }
+
+                        .inputDefault {
+                            color: #656565;
+                        }
                     </style>
                 </button>
                 <?php }; ?>
