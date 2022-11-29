@@ -49,8 +49,29 @@ if(!isset($_SESSION['email'])){
 
         <div class="itemFlex">
             <section class="checkout">
-                <h2 class="sectionHeading">Detail Pembayaran</h2>
+                <div class="judulSection">
+                    <h2 class="sectionHeading">Detail Pembayaran</h2>
+                    <a href="riwayatPembelian.php">
+                        <h3 class="riwayatTransaksi">Riwayat Transaksi</h3>
+                    </a>
+                </div>
                 
+                <style>
+                    .judulSection {
+                        display: flex;
+                    }
+
+                    .riwayatTransaksi {
+                        position: absolute;
+                        margin-left: 500px;
+                        margin-top: 24px;
+                        font-weight: 300;
+                        font-size: 16px;
+                    }
+                </style>
+
+                <i class="fa-sharp fa-solid fa-envelope-open-dollar"></i>
+
                 <div class="formPembayaran">
                     
                     <div class="metodePembayaran">
@@ -107,7 +128,7 @@ if(!isset($_SESSION['email'])){
                   
                       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-                </div>
+                    </div>
                 <?php if(isset($_SESSION['cart'])){
                     $total = pg_fetch_array(pg_query("SELECT harga_total FROM pesanan WHERE id_order = '".$_SESSION['cart']."' and not status_bayar"))['harga_total'];
                     if($total > 0){; ?>

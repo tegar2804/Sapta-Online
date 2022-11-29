@@ -244,10 +244,11 @@ header{
 .sectionHeading {
 	color: #232631;
 	margin-top: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	font-size: 24px;
 	font-weight: 500;
 }
+
 
 .formPembayaran {
 	margin-bottom: 40px;

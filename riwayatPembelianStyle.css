@@ -1,0 +1,279 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+
+:root{
+	--bg-color: #fafafa;
+	--text-color: #232631;
+	--main-color: #5A4FCF;
+}
+
+body{
+	min-height: 100vh;
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	backdrop-filter: blur(5px);
+  	background-color: rgba(255, 255, 255, .15);
+	padding: 28px 12%;
+	transition: all .50s ease;
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+}
+
+.logo i{
+	color: var(--main-color);
+	font-size: 28px;
+	margin-right: 3px;
+}
+
+.logo span{
+	color: var(--text-color);
+	font-size: 1.7rem;
+	font-weight: 600;
+}
+
+.navbar{
+	display: flex;
+}
+
+.navbar a{
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding: 5px 0;
+	margin: 0px 30px;
+	transition: all .50s ease;
+}
+
+.navbar a:hover{
+	color: var(--main-color);
+}
+
+.navbar a.active{
+	color: var(--main-color);
+}
+
+.main{
+	display: flex;
+	align-items: center;
+}
+
+.main a{
+	margin-right: 25px;
+	margin-left: 10px;
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+
+.icon i{
+    height: 50%;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #EAE9F6;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.icon i:hover {
+    background: #5A4FCF;
+    color: #FFFFFF;
+	font-size: 16px;
+}
+
+.nyambutUser {
+	color: #5A4FCF;
+	font-size: 16px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 10px;
+	font-weight: 600;
+}
+
+.login {
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #EAE9F6;
+	margin-left: 20px;
+}
+
+.login a {
+	margin-left: 20px;
+	color: #5A4FCF;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.login:hover {
+    background: #5A4FCF;	
+}
+
+.login a:hover {
+    color: #ffffff;
+}
+
+.main a:hover{
+	color: var(--main-color);
+}
+
+.tombolLogout {
+	color: #656565;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.tombolLogout:hover {
+	color: #5A4FCF;
+}
+
+#menu-icon{
+	font-size: 35px;
+	color: var(--text-color);
+	cursor: pointer;
+	z-index: 10001;
+	display: none;
+}
+
+
+@media (max-width: 1280px){
+	header{
+		padding: 14px 2%;
+		transition: .2s;
+	}
+	.navbar a{
+		padding: 5px 0;
+		margin: 0px 20px;
+	}
+}
+
+@media (max-width: 1090px){
+	#menu-icon{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		width: 270px;
+		height: 29vh;
+		background: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-radius: 10px;
+		transition: all .50s ease;
+	}
+	.navbar a{
+		display: block;
+		margin: 12px 0;
+		padding: 0px 25px;
+		transition: all .50s ease;
+	}
+	.navbar a:hover{
+		color: var(--text-color);
+		transform: translateY(5px);
+	}
+}
+
+.riwayatPembelian {
+	margin-top: 120px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+}
+
+.riwayatPembelian h2 {
+    font-size: 24px;
+    color: #232631;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.containerRadio {
+	display: list-item;
+    margin-bottom: 100px;
+}
+  
+.radio-tile-group {
+	display: list-item;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+  
+.input-container {
+	position: relative;
+	height: 7rem;
+	width: 50rem;
+    margin-bottom: 20px;
+}
+  
+.input-container input {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	cursor: pointer;
+	z-index: 2;
+	opacity: 0;
+}
+  
+.input-container .radio-tile {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: left;
+	height: 100%;
+	border: 2px solid var(--main-color);
+	border-radius: 8px;
+	transition: all 300ms ease;
+	margin-left: 20px;
+}
+  
+.input-container ion-icon {
+	color: var(--main-color);
+	font-size: 3rem;
+}
+  
+.input-container label {
+	color: var(--main-color);
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.input-container p {
+	font-size: 16px;
+	font-weight: 500;
+}
