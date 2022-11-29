@@ -122,7 +122,7 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
                         while($data_menu = pg_fetch_array($query_menu)){;
                     ?>
                     <ul class="menuMakanan">
-                        <li><?php echo $data_menu['nama_menu'] ?></li> <span>x<?php echo $data_menu['qty'] ?> = </span>
+                        <li><?php echo $data_menu['nama_menu'] ?></li> <span class="qty">x<?php echo $data_menu['qty'] ?> = </span>
                         <li>IDR <?php echo number_format($data_menu['harga_menu']*$data_menu['qty'], 0, ',', '.') ?></li>
                     </ul>
                     <?php }
