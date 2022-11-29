@@ -1,3 +1,12 @@
+<?php
+include("config.php");
+session_start();
+if(!isset($_SESSION['email'])){
+    header("Location: login.php");
+    exit;
+}
+$query = pg_query("SELECT * FROM pesanan WHERE status_bayar AND email = '".$_SESSION['email']."' ORDER BY id_order");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +30,6 @@
 			<li><a href="tentangSapta.php">Tentang Sapta</a></li>		
         </ul>
         <?php
-        session_start();
         if(!isset($_SESSION['email'])){;
         ?>
 		<div class="main">
@@ -53,41 +61,27 @@
         <h2>Riwayat Pembelian</h2>
         <div class="containerRadio">
             <div class="radio-tile-group">
-                
-                <a href="invoice.php">
+                <?php
+                while($data_history = pg_fetch_array($query)){; ?>
+                <a href="invoice.php?id=<?php echo $data_history['id_order'] ?>">
                     <div class="input-container">
                         <div class="radio-tile">
-                            <label>SPTA0001</label>
-                            <div class="tglTransaksi"><p>Tanggal Transaksi </p><span>: 28 November 2022</span></div>
+                            <?php 
+                                $str = "";
+                                $num = $data_history['id_order'];
+                                while($num < 1000){
+                                    $str .= "0";
+                                    $num *= 10;
+                                }
+                            ?>
+                            <label>SPTA<?php echo $str; echo $data_history['id_order'] ?></label>
+                            <div class="tglTransaksi"><p>Tanggal Transaksi </p><span>: <?php echo date('d F Y', strtotime($data_history['tanggal_order'])) ?></span></div>
                             <div class="statusTransaksi"><p>Status </p> <span>: Sukses</span></div>
                             <div class="pembayaranVia"><p>Pembayaran melalui </p><span>: GoPay</span></div>
                         </div>
                     </div>
                 </a>
-                
-                <a href="invoice.php">
-                    <div class="input-container">
-                        <div class="radio-tile">
-                            <label>SPTA0002</label>
-                            <div class="tglTransaksi"><p>Tanggal Transaksi </p><span>: 28 November 2022</span></div>
-                            <div class="statusTransaksi"><p>Status </p> <span>: Sukses</span></div>
-                            <div class="pembayaranVia"><p>Pembayaran melalui </p><span>: GoPay</span></div>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="invoice.php">
-                    <div class="input-container">
-                        <div class="radio-tile">
-                            <i class="fa-sharp fa-solid fa-envelope-open-dollar"></i>
-                            <label>SPTA0003</label>
-                            <div class="tglTransaksi"><p>Tanggal Transaksi </p><span>: 28 November 2022</span></div>
-                            <div class="statusTransaksi"><p>Status </p> <span>: Sukses</span></div>
-                            <div class="pembayaranVia"><p>Pembayaran melalui </p><span>: GoPay</span></div>
-                        </div>
-                    </div>
-                </a>
-                
+                <?php }; ?>
                 <style>
                     .radio-tile {
                         background-color: #FFFFFF;

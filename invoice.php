@@ -5,6 +5,10 @@ if(!isset($_SESSION['email'])){
     header("Location: login.php");
     exit;
 }
+if(!isset($_GET['id'])){
+    echo "AKSES DILARANG!!";
+    exit;
+}
 $query = pg_query("SELECT D.id_order, email, tanggal_order, harga_total, status_bayar, SUM(qty) FROM pesanan O, detail_order D WHERE O.id_order = D.id_order and D.id_order = ".$_GET['id']." GROUP BY D.id_order, email, tanggal_order, harga_total, status_bayar");
 $data_invoice = pg_fetch_array($query);
 if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar'])){
@@ -172,7 +176,7 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
     </div>
 
     <section class="backButton">
-        <button class="backBtn"><a href="cart.php">Kembali</a></button>
+        <button class="backBtn"><a href="riwayatPembelian.php">Kembali</a></button>
     </section>
 
 </body>
