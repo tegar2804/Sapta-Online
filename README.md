@@ -39,3 +39,6 @@ Sapta Onglen merupakan website untuk memesan makanan dan minuman di kantin Sapta
 
 ### Halaman Lupa Password
 ![Forgot Password Page](./Images/lupapass.png)
+
+### Halaman Tentang
+![About Page](./Images/tentangsapta2.png)
