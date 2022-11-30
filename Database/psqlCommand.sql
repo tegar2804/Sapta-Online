@@ -1,10 +1,12 @@
->> BIKIN DATABASE
+-- BIKIN DATABASE --
 CREATE DATABASE proyek_basdat;
 
->> Janlup Kalo Connect Ke Satabasenya Dulu
+/*
+Janlup Connect Ke Databasenya Dulu
 \c proyek_basdat
+*/
 
->> BIKIN TABLE CUSTOMER
+-- BIKIN TABLE CUSTOMER --
 CREATE TABLE customer (
     nama_lengkap VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -14,7 +16,7 @@ CREATE TABLE customer (
     CONSTRAINT email_pk PRIMARY KEY(email)
 );
 
->> BIKIN TABLE TOKO
+-- BIKIN TABLE TOKO --
 CREATE TABLE TOKO (
     id_toko VARCHAR(8) NOT NULL,
     nama_toko VARCHAR(255) NOT NULL,
@@ -25,7 +27,7 @@ CREATE TABLE TOKO (
     CONSTRAINT id_toko_pk PRIMARY KEY(id_toko)
 );
 
->> BIKIN TABLE MENU
+-- BIKIN TABLE MENU --
 CREATE TABLE MENU (
     id_menu VARCHAR(8) NOT NULL,
     id_toko VARCHAR(8) NOT NULL,
@@ -36,17 +38,18 @@ CREATE TABLE MENU (
     CONSTRAINT id_toko_fk FOREIGN KEY(id_toko) REFERENCES TOKO(id_toko)
 );
 
->> BIKIN TABLE ORDER
+-- BIKIN TABLE ORDER --
 CREATE TABLE pesanan (
     id_order SERIAL NOT NULL,
     email VARCHAR(255) NOT NULL,
     tanggal_order DATE NOT NULL,
     harga_total INT NOT NULL,
     CONSTRAINT id_order_pk PRIMARY KEY(id_order),
-    CONSTRAINT email_fk FOREIGN KEY(email) REFERENCES CUSTOMER(email)
+    CONSTRAINT email_fk FOREIGN KEY(email) REFERENCES CUSTOMER(email),
+    status_bayar BOOLEAN NOT NULL
 );
 
->> insert TOKO
+-- INSERT DATA TOKO --
 INSERT INTO TOKO(id_toko, nama_toko, kategori, waktu_buka, waktu_tutup, foto_toko) VALUES('T001', 'Warung Nasi Pecel', 'makanan', '08:00', '17:00', 'images/image\ 5.png');
 INSERT INTO TOKO(id_toko, nama_toko, kategori, waktu_buka, waktu_tutup, foto_toko) VALUES('T002', 'Rumah Makan Padang', 'makanan', '08:00', '17:00', 'images/image\ 11.png');
 INSERT INTO TOKO(id_toko, nama_toko, kategori, waktu_buka, waktu_tutup, foto_toko) VALUES('T003', 'Warung Bumbu Kacang', 'makanan', '08:00', '17:00', 'images/Resep-Gado-Gado\ \(1\).webp');
@@ -54,7 +57,7 @@ INSERT INTO TOKO(id_toko, nama_toko, kategori, waktu_buka, waktu_tutup, foto_tok
 INSERT INTO TOKO(id_toko, nama_toko, kategori, waktu_buka, waktu_tutup, foto_toko) VALUES('T005', 'Juice Buah Segar Sapta', 'minuman', '08:00', '17:00', 'images/jus-cover.jpg');
 INSERT INTO TOKO(id_toko, nama_toko, kategori, waktu_buka, waktu_tutup, foto_toko) VALUES('T006', 'Aneka Minuman Segar', 'minuman', '08:00', '17:00', 'images/minuman_kemasan_botol_image_2.jpg');
 
->> insert MENU
+-- INSERT DATA MENU --
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M001','T001', 'Nasi Ayam', 12000, 'images/Pecel-Ayam-2.jpg');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M002','T001', 'Nasi Telur Dadar', 8000, 'images/image\ 5.png');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M003','T001', 'Nasi Lele', 10000, 'images/pecel\ lele.jpeg');
@@ -81,7 +84,7 @@ INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M024','T006', 'Minuman Soda', 6000, 'images/minuman\ soda.jpg');
 INSERT INTO MENU (id_menu, id_toko, nama_menu, harga_menu, foto_menu) VALUES ('M025','T006', 'Kopi', 5000, 'images/kopi\ good\ day.jpg');
 
->> BIKIN TABLE DETAIL_ORDER
+-- BIKIN TABLE DETAIL_ORDER --
 CREATE TABLE DETAIL_ORDER (
     id_order SERIAL NOT NULL,
     id_menu VARCHAR(8) NOT NULL,
@@ -89,6 +92,3 @@ CREATE TABLE DETAIL_ORDER (
     CONSTRAINT id_order_fk FOREIGN KEY(id_order) REFERENCES pesanan(id_order),
     CONSTRAINT id_menu_fk FOREIGN KEY(id_menu) REFERENCES MENU(id_menu)
 );
-
->> NAMBAH ATTRIBUTE 'status_bayar' untuk TABEL pesanan
-ALTER TABLE pesanan ALTER COLUMN status_bayar BOOLEAN NOT NULL;
