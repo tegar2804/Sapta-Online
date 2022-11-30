@@ -135,6 +135,10 @@ if($data_invoice['email'] != $_SESSION['email'] || !($data_invoice['status_bayar
                     <h6 class="totalPerToko">Total = IDR <?php echo number_format($subtotal, 0, ',', '.') ?></h6>
                     
                     <style>
+                        .qty {
+                            margin-right: 20px;
+                        }
+
                         .menuMakanan span {
                             position: absolute;
                             font-size: 14px;

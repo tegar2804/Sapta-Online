@@ -64,6 +64,16 @@ if(isset($_POST['cont'])&&!empty($_POST['cont'])){
                 <input class="submit" type="submit" value="Continue" name="cont"/>
                 
                 <style>
+                    input {
+                        width: 100%;
+                        margin: 2px;
+                        border: none;
+                        outline: none;
+                        padding: 8px;
+                        border-radius: 5px;
+                        border: 1px solid gray;
+                    }
+
                     .submit {
                         background-color:#FDC886; 
                         color:#FFFFFF;

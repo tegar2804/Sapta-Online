@@ -134,10 +134,6 @@ header{
     text-decoration: none;
 }
 
-.login:hover {
-    background: #5A4FCF;	
-}
-
 .login a:hover {
     color: #ffffff;
 }

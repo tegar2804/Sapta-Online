@@ -32,6 +32,13 @@
             <button class="login">
                 <a href="login.php">Login</a>
             </button>
+
+            <style>
+                .login a:hover {
+                    width: 100%;
+                    color: #FFFFFF;
+                }
+            </style>
 		</div>
         <?php }else{; ?>
         <div class="main">
@@ -215,7 +222,7 @@
             </div>
             
             <div class="card">
-                <img src="Images/nasiBentoSapta 1.png" alt="">
+                <img src="Images/Resep-Gado-Gado (1).webp" alt="" width="500px" style="border-radius: 24px;">
                 <div class="cont">
                     <div class="ratingMakanan">
                         <img src="icon/Star 1.svg" alt="" class="star1">
@@ -223,7 +230,7 @@
                         <span class="jumlahRating">(100+)</span>
                         <img src="icon/Panah Kanan.svg" alt="" class="panahKanan">
                     </div>
-                    <p class="judulMakanan">Bento Anjay</p>
+                    <p class="judulMakanan">Warung Sambal Kacang</p>
                     <div class="lokasiMakanan">
                         <i class="ri-map-pin-line"></i><span>Kantin Fateta</span>
                     </div>
