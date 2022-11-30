@@ -13,28 +13,29 @@ Sapta Onglen merupakan website untuk memesan makanan dan minuman di kantin Sapta
 ## Tampilan Website
 
 ### Halaman Login
-![Login Page]()
+![Login Page](./images/login.png)
 
 ### Halaman Registrasi
-![Register Page]()
+![Register Page](./images/register.png)
 
 ### Halaman Beranda
-![Home Page]()
+![Home Page](./images/beranda.png)
+![Home Page](./images/beranda2.png)
 
 ### Halaman Kantin
-![Kantin Page]()
+![Kantin Page](./images/kantin.png)
 
 ### Halaman Menu
-![Menu Page]()
+![Menu Page](./images/menu.png)
 
 ### Halaman Keranjang
-![Cart Page]()
+![Cart Page](./images/keranjang.png)
 
 ### Halaman Invoice
-![Invoice Page]()
+![Invoice Page](./images/invoice.png)
 
 ### Halaman History Invoice
-![History Page]()
+![History Page](./images/riwayat.png)
 
 ### Halaman Lupa Password
-![Forgot Password Page]()
+![Forgot Password Page](./Images/lupapass.png)
