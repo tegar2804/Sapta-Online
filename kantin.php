@@ -58,6 +58,7 @@
         $toko = pg_fetch_array(pg_query("SELECT * FROM toko WHERE id_toko = '".$_GET['toko']."'"));
 	}else{
 		die("akses dilarang...");
+        exit;
 	}
     ?>
     
